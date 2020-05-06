@@ -6,23 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://usstzt.site">
-  <title>jdbc连接mysql数据库 | UsstZt</title>
+  <title>Tag: hexo | UsstZt</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java MySQL 连接">
-<meta property="og:type" content="article">
-<meta property="og:title" content="jdbc连接mysql数据库">
-<meta property="og:url" content="http://usstzt.site/2020/05/06/jdbc%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+  <meta name="description" content="浮生若梦，为欢几何">
+<meta property="og:type" content="website">
+<meta property="og:title" content="UsstZt">
+<meta property="og:url" content="http://usstzt.site/tags/hexo/index.html">
 <meta property="og:site_name" content="UsstZt">
-<meta property="og:description" content="Java MySQL 连接">
+<meta property="og:description" content="浮生若梦，为欢几何">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/12/mysql-data.jpg">
-<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2016/08/result.jpg">
-<meta property="article:published_time" content="2020-05-06T02:52:40.000Z">
-<meta property="article:modified_time" content="2020-05-06T04:58:46.079Z">
 <meta property="article:author" content="Zhangtao">
-<meta property="article:tag" content="mysql，java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2013/12/mysql-data.jpg">
   
     <link rel="alternative" href="/atom.xml" title="UsstZt" type="application/atom+xml">
   
@@ -174,282 +168,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jdbc连接mysql数据库" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      jdbc连接mysql数据库
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/05/06/hexo%20yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/" class="archive-article-date">
+  	<time datetime="2020-05-06T02:52:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-06</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/05/06/hexo%20yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/">hexo yilia主题添加评论</a>
     </h1>
   
 
-        
-        <a href="/2020/05/06/jdbc%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2020-05-06T02:52:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Java-MySQL-连接"><a href="#Java-MySQL-连接" class="headerlink" title="Java MySQL 连接"></a>Java MySQL 连接</h2><a id="more"></a>
-<p> Java 如何使用 使用 JDBC 连接 MySQL 数据库，MySQL 8.0 以上版本的数据库连接有所不同：</p>
-<p>1、MySQL 8.0 以上版本驱动包版本 mysql-connector-java-8.0.16.jar。</p>
-<p>2、com.mysql.jdbc.Driver 更换为 com.mysql.cj.jdbc.Driver。</p>
-<p>MySQL 8.0 以上版本不需要建立 SSL 连接的，需要显示关闭。</p>
-<p>最后还需要设置 CST。</p>
-<p>加载驱动与连接数据库方式如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">"com.mysql.cj.jdbc.Driver"</span>);</span><br><span class="line">conn = DriverManager.getConnection(<span class="string">"jdbc:mysql://localhost:3306/test_demo?useSSL=false&amp;serverTimezone=UTC"</span>,<span class="string">"root"</span>,<span class="string">"password"</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="创建测试数据"><a href="#创建测试数据" class="headerlink" title="创建测试数据"></a>创建测试数据</h3><p>接下来我们在 MySQL 中创建 RUNOOB 数据库，并创建 websites 数据表，表结构如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `websites` (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `name` char(20) NOT NULL DEFAULT <span class="string">''</span> COMMENT <span class="string">'站点名称'</span>,</span><br><span class="line">  `url` varchar(255) NOT NULL DEFAULT <span class="string">''</span>,</span><br><span class="line">  `alexa` int(11) NOT NULL DEFAULT <span class="string">'0'</span> COMMENT <span class="string">'Alexa 排名'</span>,</span><br><span class="line">  `country` char(10) NOT NULL DEFAULT <span class="string">''</span> COMMENT <span class="string">'国家'</span>,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
-
-<p>插入一些数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `websites` VALUES (<span class="string">'1'</span>, <span class="string">'Google'</span>, <span class="string">'https://www.google.cm/'</span>, <span class="string">'1'</span>, <span class="string">'USA'</span>), (<span class="string">'2'</span>, <span class="string">'淘宝'</span>, <span class="string">'https://www.taobao.com/'</span>, <span class="string">'13'</span>, <span class="string">'CN'</span>), (<span class="string">'3'</span>, <span class="string">'菜鸟教程'</span>, <span class="string">'http://www.runoob.com'</span>, <span class="string">'5892'</span>, <span class="string">''</span>), (<span class="string">'4'</span>, <span class="string">'微博'</span>, <span class="string">'http://weibo.com/'</span>, <span class="string">'20'</span>, <span class="string">'CN'</span>), (<span class="string">'5'</span>, <span class="string">'Facebook'</span>, <span class="string">'https://www.facebook.com/'</span>, <span class="string">'3'</span>, <span class="string">'USA'</span>);</span><br></pre></td></tr></table></figure>
-<p>数据表显示如下：<br><img src="https://www.runoob.com/wp-content/uploads/2013/12/mysql-data.jpg" alt=""></p>
-<h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><p>以下实例使用了 JDBC 连接 MySQL 数据库，注意一些数据如用户名，密码需要根据你的开发环境来配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">package com.runoob.test;</span><br><span class="line"> </span><br><span class="line">import java.sql.*;</span><br><span class="line"> </span><br><span class="line">public class MySQLDemo &#123;</span><br><span class="line"> </span><br><span class="line">    // MySQL 8.0 以下版本 - JDBC 驱动名及数据库 URL</span><br><span class="line">    static final String JDBC_DRIVER = <span class="string">"com.mysql.jdbc.Driver"</span>;  </span><br><span class="line">    static final String DB_URL = <span class="string">"jdbc:mysql://localhost:3306/RUNOOB"</span>;</span><br><span class="line"> </span><br><span class="line">    // MySQL 8.0 以上版本 - JDBC 驱动名及数据库 URL</span><br><span class="line">    //static final String JDBC_DRIVER = <span class="string">"com.mysql.cj.jdbc.Driver"</span>;  </span><br><span class="line">    //static final String DB_URL = <span class="string">"jdbc:mysql://localhost:3306/RUNOOB?useSSL=false&amp;serverTimezone=UTC"</span>;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    // 数据库的用户名与密码，需要根据自己的设置</span><br><span class="line">    static final String USER = <span class="string">"root"</span>;</span><br><span class="line">    static final String PASS = <span class="string">"123456"</span>;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Connection conn = null;</span><br><span class="line">        Statement stmt = null;</span><br><span class="line">        try&#123;</span><br><span class="line">            // 注册 JDBC 驱动</span><br><span class="line">            Class.forName(JDBC_DRIVER);</span><br><span class="line">        </span><br><span class="line">            // 打开链接</span><br><span class="line">            System.out.println(<span class="string">"连接数据库..."</span>);</span><br><span class="line">            conn = DriverManager.getConnection(DB_URL,USER,PASS);</span><br><span class="line">        </span><br><span class="line">            // 执行查询</span><br><span class="line">            System.out.println(<span class="string">" 实例化Statement对象..."</span>);</span><br><span class="line">            stmt = conn.createStatement();</span><br><span class="line">            String sql;</span><br><span class="line">            sql = <span class="string">"SELECT id, name, url FROM websites"</span>;</span><br><span class="line">            ResultSet rs = stmt.executeQuery(sql);</span><br><span class="line">        </span><br><span class="line">            // 展开结果集数据库</span><br><span class="line">            <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">                // 通过字段检索</span><br><span class="line">                int id  = rs.getInt(<span class="string">"id"</span>);</span><br><span class="line">                String name = rs.getString(<span class="string">"name"</span>);</span><br><span class="line">                String url = rs.getString(<span class="string">"url"</span>);</span><br><span class="line">    </span><br><span class="line">                // 输出数据</span><br><span class="line">                System.out.print(<span class="string">"ID: "</span> + id);</span><br><span class="line">                System.out.print(<span class="string">", 站点名称: "</span> + name);</span><br><span class="line">                System.out.print(<span class="string">", 站点 URL: "</span> + url);</span><br><span class="line">                System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            // 完成后关闭</span><br><span class="line">            rs.close();</span><br><span class="line">            stmt.close();</span><br><span class="line">            conn.close();</span><br><span class="line">        &#125;catch(SQLException se)&#123;</span><br><span class="line">            // 处理 JDBC 错误</span><br><span class="line">            se.printStackTrace();</span><br><span class="line">        &#125;catch(Exception e)&#123;</span><br><span class="line">            // 处理 Class.forName 错误</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;finally&#123;</span><br><span class="line">            // 关闭资源</span><br><span class="line">            try&#123;</span><br><span class="line">                <span class="keyword">if</span>(stmt!=null) stmt.close();</span><br><span class="line">            &#125;catch(SQLException se2)&#123;</span><br><span class="line">            &#125;// 什么都不做</span><br><span class="line">            try&#123;</span><br><span class="line">                <span class="keyword">if</span>(conn!=null) conn.close();</span><br><span class="line">            &#125;catch(SQLException se)&#123;</span><br><span class="line">                se.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"Goodbye!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：<br><img src="https://www.runoob.com/wp-content/uploads/2016/08/result.jpg" alt=""></p>
-<p>下篇博客见！</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你的馈赠<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/weixin.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql，java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据库//" class="article-tag-list-link color4">数据库</a>
+        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://usstzt.site/2020/05/06/jdbc%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/05/06/pycharm%E7%A0%B4%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          pycharm破解
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/05/06/hexo%20yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo yilia主题添加评论</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-MySQL-连接"><span class="toc-number">1.</span> <span class="toc-text">Java MySQL 连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建测试数据"><span class="toc-number">1.1.</span> <span class="toc-text">创建测试数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接数据库"><span class="toc-number">1.2.</span> <span class="toc-text">连接数据库</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-
-
-
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      jdbc连接mysql数据库
-    </h1>
-  
-
-        
-        <a href="/2020/05/06/jdbc%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2020-05-06T02:52:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-06</time>
-</a>
-        
     
-    
-        
-          <span class="archive-article-date">
-              阅读量 <span id="busuanzi_value_page_pv"></span>
-          </span>
-        
-    
-    
-      </header>
-
-
-
-   
-       <section id="comments" class="comments">
-         <style>
-           .comments{margin:30px;padding:10px;background:#fff}
-           @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-         </style>
-         <div id="vcomment" class="comment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-  var notify = 'false' == true ? true : false;
-  var verify = 'false' == true ? true : false;
-  new Valine({
-    av: AV,
-    el: '#vcomment',
-    notify: notify,
-    app_id: "otpRxY6fAQNhhBfuMbTCpqkz-gzGzoHsz",
-    app_key: "yUo0fhYhFjOHK3VWJbCnVu8T",
-    placeholder: "Just go",
-    avatar: "",
-  });
-</script>
-
-     </section>
-   
-
 
 
           </div>
@@ -501,9 +284,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

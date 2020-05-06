@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://usstzt.site">
-  <title>jdbc连接mysql数据库 | UsstZt</title>
+  <title>hexo yilia主题添加评论 | UsstZt</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java MySQL 连接">
+  <meta name="description" content="hexo给自己网页添加评论系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jdbc连接mysql数据库">
-<meta property="og:url" content="http://usstzt.site/2020/05/06/jdbc%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+<meta property="og:title" content="hexo yilia主题添加评论">
+<meta property="og:url" content="http://usstzt.site/2020/05/06/hexo%20yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/index.html">
 <meta property="og:site_name" content="UsstZt">
-<meta property="og:description" content="Java MySQL 连接">
+<meta property="og:description" content="hexo给自己网页添加评论系统">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/12/mysql-data.jpg">
-<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2016/08/result.jpg">
 <meta property="article:published_time" content="2020-05-06T02:52:40.000Z">
-<meta property="article:modified_time" content="2020-05-06T04:58:46.079Z">
+<meta property="article:modified_time" content="2020-05-06T08:27:56.698Z">
 <meta property="article:author" content="Zhangtao">
-<meta property="article:tag" content="mysql，java">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2013/12/mysql-data.jpg">
   
     <link rel="alternative" href="/atom.xml" title="UsstZt" type="application/atom+xml">
   
@@ -174,19 +171,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jdbc连接mysql数据库" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-hexo yilia主题添加评论" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      jdbc连接mysql数据库
+      hexo yilia主题添加评论
     </h1>
   
 
         
-        <a href="/2020/05/06/jdbc%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
+        <a href="/2020/05/06/hexo%20yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/" class="archive-article-date">
   	<time datetime="2020-05-06T02:52:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-06</time>
 </a>
         
@@ -194,27 +191,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Java-MySQL-连接"><a href="#Java-MySQL-连接" class="headerlink" title="Java MySQL 连接"></a>Java MySQL 连接</h2><a id="more"></a>
-<p> Java 如何使用 使用 JDBC 连接 MySQL 数据库，MySQL 8.0 以上版本的数据库连接有所不同：</p>
-<p>1、MySQL 8.0 以上版本驱动包版本 mysql-connector-java-8.0.16.jar。</p>
-<p>2、com.mysql.jdbc.Driver 更换为 com.mysql.cj.jdbc.Driver。</p>
-<p>MySQL 8.0 以上版本不需要建立 SSL 连接的，需要显示关闭。</p>
-<p>最后还需要设置 CST。</p>
-<p>加载驱动与连接数据库方式如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">"com.mysql.cj.jdbc.Driver"</span>);</span><br><span class="line">conn = DriverManager.getConnection(<span class="string">"jdbc:mysql://localhost:3306/test_demo?useSSL=false&amp;serverTimezone=UTC"</span>,<span class="string">"root"</span>,<span class="string">"password"</span>);</span><br></pre></td></tr></table></figure>
+        <h2 id="hexo给自己网页添加评论系统"><a href="#hexo给自己网页添加评论系统" class="headerlink" title="hexo给自己网页添加评论系统"></a>hexo给自己网页添加评论系统</h2><a id="more"></a>
+
+<p>其实网上关于Hexo的博客添加Valine评论系统的是教程很多的，但是大多针对Next那个主题，确实那个主题各方面的功能都做得很完善了，但是我还是比较喜欢yilia这个主题，然而这两个主题的文件结构就很不一样，教程并不能直接用到yilia这个主题上来。</p>
+<p>在我使用yilia主题添加Valine评论系统的过程中着实遇到不少问题，个人没有在网上找到一份完全针对yilia主题添加valine评论系统的详细教程，所以写下这篇教程，也算是写的笔记吧，也许有后来者能用得上。</p>
+<h1 id="添加相关代码"><a href="#添加相关代码" class="headerlink" title="添加相关代码"></a>添加相关代码</h1><p>yilia主题支持了多说、网易云跟帖、畅言、Disqus以及Gitment，但似乎没有写好的valine代码，所以我们首先要手动添加相关代码。</p>
+<p>下面的代码来源于yilia主题下的一个Issue：新增对Valine评论系统的支持，可以参照一下（不想踩坑的话请就看我这篇文章，不用谢我），但是对小白来说可能并不太清楚，代码添加到某一个文件，但是并没有说具体添加到什么位置，所以我根据自己的经历写一下对小白来说更加切实的步骤。</p>
+<p>需要修改的有三个地方，都是主题目录下对应的文件，不是博客目录，修改后记得保存。</p>
+<h2 id="1-config-yml"><a href="#1-config-yml" class="headerlink" title="1.config.yml"></a>1.config.yml</h2><p>yilia主题根目录下的_config.yml，不是博客根目录下的_config.yml，打开后添加到什么位置都可以，但是建议根据已经写好的几个评论系统就对应的添加到#5、Gitment的下方</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#6、Valine https:&#x2F;&#x2F;valine.js.org</span><br><span class="line"> valine: </span><br><span class="line">  appid: #Leancloud应用的appId</span><br><span class="line">  appkey: #Leancloud应用的appKey</span><br><span class="line">  verify: false #验证码，verify和notify这两个最好就别动了</span><br><span class="line">  notify: false #评论回复提醒</span><br><span class="line">  avatar: mm #评论列表头像样式：&#39;&#39;&#x2F;mm&#x2F;identicon&#x2F;monsterid&#x2F;wavatar&#x2F;retro&#x2F;hide</span><br><span class="line">  placeholder: Just go go #评论框占位符</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-yilia-layout-partial-article-ejs"><a href="#2-yilia-layout-partial-article-ejs" class="headerlink" title="2. yilia\layout_partial\article.ejs"></a>2. yilia\layout_partial\article.ejs</h2><p>这段代码改过一点点，添加了一个判断条件如果在博客首页就不执行下面的代码（具体添加了下面代码的第一行和最后一行），也就是只在阅读全文的时候才在文章底部显示评论框，原Issue下的代码不含这个判断条件，也就是首页每篇博客下方都会有一个评论框，这应该不是我们想要的。 代码直接插入在最后面就可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (!index)&#123; %&gt;</span><br><span class="line">   &lt;% if (theme.valine &amp;&amp; theme.valine.appid &amp;&amp; theme.valine.appkey)&#123; %&gt;</span><br><span class="line">       &lt;section id&#x3D;&quot;comments&quot; class&#x3D;&quot;comments&quot;&gt;</span><br><span class="line">         &lt;style&gt;</span><br><span class="line">           .comments&#123;margin:30px;padding:10px;background:#fff&#125;</span><br><span class="line">           @media screen and (max-width:800px)&#123;.comments&#123;margin:auto;padding:10px;background:#fff&#125;&#125;</span><br><span class="line">         &lt;&#x2F;style&gt;</span><br><span class="line">         &lt;%- partial(&#39;post&#x2F;valine&#39;, &#123;</span><br><span class="line">           key: post.slug,</span><br><span class="line">           title: post.title,</span><br><span class="line">           url: config.url+url_for(post.path)</span><br><span class="line">           &#125;) %&gt;</span><br><span class="line">     &lt;&#x2F;section&gt;</span><br><span class="line">   &lt;% &#125; %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-valine-ejs"><a href="#3-valine-ejs" class="headerlink" title="3.valine.ejs"></a>3.valine.ejs</h2><p>这个文件是没有的，按照路径yilia\layout_partial\post\valine.ejs新建一个valine.ejs，再把下面的代码添加添加进去，保存，注意和Issue给出的代码可能不太一样，说过了不想踩坑请直接使用我给出的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;vcomment&quot; class&#x3D;&quot;comment&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;&#x2F;&#x2F;cdn1.lncld.net&#x2F;static&#x2F;js&#x2F;3.0.4&#x2F;av-min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script src&#x3D;&#39;&#x2F;&#x2F;unpkg.com&#x2F;valine&#x2F;dist&#x2F;Valine.min.js&#39;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdnjs.loli.net&#x2F;ajax&#x2F;libs&#x2F;jquery&#x2F;3.2.1&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  var notify &#x3D; &#39;&lt;%&#x3D; theme.valine.notify %&gt;&#39; &#x3D;&#x3D; true ? true : false;</span><br><span class="line">  var verify &#x3D; &#39;&lt;%&#x3D; theme.valine.verify %&gt;&#39; &#x3D;&#x3D; true ? true : false;</span><br><span class="line">  new Valine(&#123;</span><br><span class="line">    av: AV,</span><br><span class="line">    el: &#39;#vcomment&#39;,</span><br><span class="line">    notify: notify,</span><br><span class="line">    app_id: &quot;&lt;%&#x3D; theme.valine.appid %&gt;&quot;,</span><br><span class="line">    app_key: &quot;&lt;%&#x3D; theme.valine.appkey %&gt;&quot;,</span><br><span class="line">    placeholder: &quot;&lt;%&#x3D; theme.valine.placeholder %&gt;&quot;,</span><br><span class="line">    avatar: &quot;&lt;%&#x3D; theme.valine.avatar %&gt;&quot;,</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>安装评论<br>接下来就要使用到Leancloud了，大概就是作为我们Valine评论系统的服务器，因为Valine首页就介绍了Valine是“一款快速、简洁且高效的无后端评论系统”，自行注册一个账号并登录。</p>
+<p>创建一个应用，应用名看个人喜好。</p>
+<p>选择刚刚创建的应用&gt;设置&gt;选择应用 Key，然后你就能看到你的App ID和App Key了，参考下图：</p>
+<p>分别复制App ID和App Key粘贴到前面设置的主题根目录下的_config.yml里对应位置，注意“:”后面必须要有一个空格，</p>
+<p>为了数据安全，再填写一下安全域名，应用&gt;设置&gt;安全设置中的Web 安全域名，如果是Hexo一般填写自己博客主页的地址和<a href="http://localhost:4000/就可以了，" target="_blank" rel="noopener">http://localhost:4000/就可以了，</a></p>
+<p>到这里，你的评论系统就已经可以工作了！<br>当然修改了相关代码需要重新部署博客，三步操作：</p>
+<figure class="highlight plain"><figcaption><span>hexo clean</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s #本地实时测试用http:&#x2F;&#x2F;localhost:4000&#x2F;访问</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="创建测试数据"><a href="#创建测试数据" class="headerlink" title="创建测试数据"></a>创建测试数据</h3><p>接下来我们在 MySQL 中创建 RUNOOB 数据库，并创建 websites 数据表，表结构如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `websites` (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `name` char(20) NOT NULL DEFAULT <span class="string">''</span> COMMENT <span class="string">'站点名称'</span>,</span><br><span class="line">  `url` varchar(255) NOT NULL DEFAULT <span class="string">''</span>,</span><br><span class="line">  `alexa` int(11) NOT NULL DEFAULT <span class="string">'0'</span> COMMENT <span class="string">'Alexa 排名'</span>,</span><br><span class="line">  `country` char(10) NOT NULL DEFAULT <span class="string">''</span> COMMENT <span class="string">'国家'</span>,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
-
-<p>插入一些数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `websites` VALUES (<span class="string">'1'</span>, <span class="string">'Google'</span>, <span class="string">'https://www.google.cm/'</span>, <span class="string">'1'</span>, <span class="string">'USA'</span>), (<span class="string">'2'</span>, <span class="string">'淘宝'</span>, <span class="string">'https://www.taobao.com/'</span>, <span class="string">'13'</span>, <span class="string">'CN'</span>), (<span class="string">'3'</span>, <span class="string">'菜鸟教程'</span>, <span class="string">'http://www.runoob.com'</span>, <span class="string">'5892'</span>, <span class="string">''</span>), (<span class="string">'4'</span>, <span class="string">'微博'</span>, <span class="string">'http://weibo.com/'</span>, <span class="string">'20'</span>, <span class="string">'CN'</span>), (<span class="string">'5'</span>, <span class="string">'Facebook'</span>, <span class="string">'https://www.facebook.com/'</span>, <span class="string">'3'</span>, <span class="string">'USA'</span>);</span><br></pre></td></tr></table></figure>
-<p>数据表显示如下：<br><img src="https://www.runoob.com/wp-content/uploads/2013/12/mysql-data.jpg" alt=""></p>
-<h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><p>以下实例使用了 JDBC 连接 MySQL 数据库，注意一些数据如用户名，密码需要根据你的开发环境来配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">package com.runoob.test;</span><br><span class="line"> </span><br><span class="line">import java.sql.*;</span><br><span class="line"> </span><br><span class="line">public class MySQLDemo &#123;</span><br><span class="line"> </span><br><span class="line">    // MySQL 8.0 以下版本 - JDBC 驱动名及数据库 URL</span><br><span class="line">    static final String JDBC_DRIVER = <span class="string">"com.mysql.jdbc.Driver"</span>;  </span><br><span class="line">    static final String DB_URL = <span class="string">"jdbc:mysql://localhost:3306/RUNOOB"</span>;</span><br><span class="line"> </span><br><span class="line">    // MySQL 8.0 以上版本 - JDBC 驱动名及数据库 URL</span><br><span class="line">    //static final String JDBC_DRIVER = <span class="string">"com.mysql.cj.jdbc.Driver"</span>;  </span><br><span class="line">    //static final String DB_URL = <span class="string">"jdbc:mysql://localhost:3306/RUNOOB?useSSL=false&amp;serverTimezone=UTC"</span>;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    // 数据库的用户名与密码，需要根据自己的设置</span><br><span class="line">    static final String USER = <span class="string">"root"</span>;</span><br><span class="line">    static final String PASS = <span class="string">"123456"</span>;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Connection conn = null;</span><br><span class="line">        Statement stmt = null;</span><br><span class="line">        try&#123;</span><br><span class="line">            // 注册 JDBC 驱动</span><br><span class="line">            Class.forName(JDBC_DRIVER);</span><br><span class="line">        </span><br><span class="line">            // 打开链接</span><br><span class="line">            System.out.println(<span class="string">"连接数据库..."</span>);</span><br><span class="line">            conn = DriverManager.getConnection(DB_URL,USER,PASS);</span><br><span class="line">        </span><br><span class="line">            // 执行查询</span><br><span class="line">            System.out.println(<span class="string">" 实例化Statement对象..."</span>);</span><br><span class="line">            stmt = conn.createStatement();</span><br><span class="line">            String sql;</span><br><span class="line">            sql = <span class="string">"SELECT id, name, url FROM websites"</span>;</span><br><span class="line">            ResultSet rs = stmt.executeQuery(sql);</span><br><span class="line">        </span><br><span class="line">            // 展开结果集数据库</span><br><span class="line">            <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">                // 通过字段检索</span><br><span class="line">                int id  = rs.getInt(<span class="string">"id"</span>);</span><br><span class="line">                String name = rs.getString(<span class="string">"name"</span>);</span><br><span class="line">                String url = rs.getString(<span class="string">"url"</span>);</span><br><span class="line">    </span><br><span class="line">                // 输出数据</span><br><span class="line">                System.out.print(<span class="string">"ID: "</span> + id);</span><br><span class="line">                System.out.print(<span class="string">", 站点名称: "</span> + name);</span><br><span class="line">                System.out.print(<span class="string">", 站点 URL: "</span> + url);</span><br><span class="line">                System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            // 完成后关闭</span><br><span class="line">            rs.close();</span><br><span class="line">            stmt.close();</span><br><span class="line">            conn.close();</span><br><span class="line">        &#125;catch(SQLException se)&#123;</span><br><span class="line">            // 处理 JDBC 错误</span><br><span class="line">            se.printStackTrace();</span><br><span class="line">        &#125;catch(Exception e)&#123;</span><br><span class="line">            // 处理 Class.forName 错误</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;finally&#123;</span><br><span class="line">            // 关闭资源</span><br><span class="line">            try&#123;</span><br><span class="line">                <span class="keyword">if</span>(stmt!=null) stmt.close();</span><br><span class="line">            &#125;catch(SQLException se2)&#123;</span><br><span class="line">            &#125;// 什么都不做</span><br><span class="line">            try&#123;</span><br><span class="line">                <span class="keyword">if</span>(conn!=null) conn.close();</span><br><span class="line">            &#125;catch(SQLException se)&#123;</span><br><span class="line">                se.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"Goodbye!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：<br><img src="https://www.runoob.com/wp-content/uploads/2016/08/result.jpg" alt=""></p>
-<p>下篇博客见！</p>
 
       
 
@@ -254,7 +257,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql，java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		
 		</ul>
@@ -266,7 +269,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据库//" class="article-tag-list-link color4">数据库</a>
+        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
         		</li>
       		
 		</ul>
@@ -321,7 +324,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://usstzt.site/2020/05/06/jdbc%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://usstzt.site/2020/05/06/hexo%20yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -335,20 +338,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/05/06/pycharm%E7%A0%B4%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/06/jdbc%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          pycharm破解
+          jdbc连接mysql数据库
         
       </div>
     </a>
   
-  
-    <a href="/2020/05/06/hexo%20yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo yilia主题添加评论</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -373,7 +371,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-MySQL-连接"><span class="toc-number">1.</span> <span class="toc-text">Java MySQL 连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建测试数据"><span class="toc-number">1.1.</span> <span class="toc-text">创建测试数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接数据库"><span class="toc-number">1.2.</span> <span class="toc-text">连接数据库</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo给自己网页添加评论系统"><span class="toc-number">1.</span> <span class="toc-text">hexo给自己网页添加评论系统</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加相关代码"><span class="toc-number"></span> <span class="toc-text">添加相关代码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-config-yml"><span class="toc-number">1.</span> <span class="toc-text">1.config.yml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-yilia-layout-partial-article-ejs"><span class="toc-number">2.</span> <span class="toc-text">2. yilia\layout_partial\article.ejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-valine-ejs"><span class="toc-number">3.</span> <span class="toc-text">3.valine.ejs</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -401,12 +399,12 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jdbc连接mysql数据库
+      hexo yilia主题添加评论
     </h1>
   
 
         
-        <a href="/2020/05/06/jdbc%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
+        <a href="/2020/05/06/hexo%20yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/" class="archive-article-date">
   	<time datetime="2020-05-06T02:52:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-06</time>
 </a>
         
