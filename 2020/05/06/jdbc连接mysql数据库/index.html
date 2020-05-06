@@ -334,11 +334,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/2020/05/06/pycharm%E7%A0%B4%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">pycharm破解</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2020/05/06/pycharm%E7%A0%B4%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          pycharm破解
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -385,25 +389,6 @@
 
   
 
-      <div id="gitalk-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
-
-<script>
-var gitalk = new Gitalk({
-  clientID: '7de4f3f61b130f919c15',
-  clientSecret: 'ef40448c8a09054e84fad3980823e1d8b7c0334d',
-  repo: 'ztscott.github.io',
-  owner: 'ztscott',
-  admin: ['ztscott'],
-  id: md5(window.location.pathname),
-  distractionFreeMode: true
-})
-
-gitalk.render('gitalk-container')
-</script>
-  
 
 
       <header class="article-header">
@@ -430,6 +415,34 @@ gitalk.render('gitalk-container')
     
       </header>
 
+
+
+   
+       <section id="comments" class="comments">
+         <style>
+           .comments{margin:30px;padding:10px;background:#fff}
+           @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+         </style>
+         <div id="vcomment" class="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var notify = 'false' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  new Valine({
+    av: AV,
+    el: '#vcomment',
+    notify: notify,
+    app_id: "otpRxY6fAQNhhBfuMbTCpqkz-gzGzoHsz",
+    app_key: "yUo0fhYhFjOHK3VWJbCnVu8T",
+    placeholder: "发表你的评论吧",
+    avatar: "",
+  });
+</script>
+
+     </section>
+   
 
 
 
