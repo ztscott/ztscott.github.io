@@ -6,23 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://usstzt.site">
-  <title>Mysql基础知识 | UsstZt</title>
+  <title>Tag: python | UsstZt</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="摘要：mysql的一些基础简单知识">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Mysql基础知识">
-<meta property="og:url" content="http://usstzt.site/2020/05/06/Mysql%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+  <meta name="description" content="浮生若梦，为欢几何">
+<meta property="og:type" content="website">
+<meta property="og:title" content="UsstZt">
+<meta property="og:url" content="http://usstzt.site/tags/python/index.html">
 <meta property="og:site_name" content="UsstZt">
-<meta property="og:description" content="摘要：mysql的一些基础简单知识">
+<meta property="og:description" content="浮生若梦，为欢几何">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img2018.cnblogs.com/common/1863179/201912/1863179-20191209230419497-12245368.png">
-<meta property="article:published_time" content="2020-05-06T02:52:40.000Z">
-<meta property="article:modified_time" content="2020-05-06T04:56:58.025Z">
 <meta property="article:author" content="Zhangtao">
-<meta property="article:tag" content="mysql">
-<meta property="article:tag" content="后端">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img2018.cnblogs.com/common/1863179/201912/1863179-20191209230419497-12245368.png">
   
     <link rel="alternative" href="/atom.xml" title="UsstZt" type="application/atom+xml">
   
@@ -173,515 +167,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Mysql基础知识" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Mysql基础知识
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/05/06/pycharm%E7%A0%B4%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2020-05-06T02:52:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-06</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/05/06/pycharm%E7%A0%B4%E8%A7%A3/">pycharm破解</a>
     </h1>
   
 
-        
-        <a href="/2020/05/06/Mysql%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2020-05-06T02:52:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="摘要：mysql的一些基础简单知识"><a href="#摘要：mysql的一些基础简单知识" class="headerlink" title="摘要：mysql的一些基础简单知识"></a>摘要：mysql的一些基础简单知识</h3><a id="more"></a>
-
-<h2 id="一、mysql基本语法"><a href="#一、mysql基本语法" class="headerlink" title="一、mysql基本语法"></a>一、mysql基本语法</h2><p>1.增：</p>
-<pre><code>insert into 表名（） values（）；括号内数值类型对应</code></pre><p>2.删：</p>
-<pre><code>delete from 表名；删除表中数据不会删除表；</code></pre><p>3.改：</p>
-<pre><code>update 表名 set 字段=&apos;XX&apos; where 条件；</code></pre><p>删表：</p>
-<pre><code>drop table if exists 表名；</code></pre><p>创建表：</p>
-<pre><code>creat table (字段名1 数据类型，
-             字段名2 数据类型，
-             字段名3 数据类型
-             )</code></pre><p>例如：创建学生表：<br>        学生信息包括：<br>            学号、姓名、性别、班级编号、生日<br>            学号：bigint<br>            姓名：varchar<br>            性别：char<br>            班级编号：int<br>            生日：char</p>
-<pre><code>create table t_student(
-    no bigint,
-    name varchar(255),
-    sex char(1),
-    classno varchar(255),
-    birth char(10)
-);</code></pre><p>查询整张表所有数据:</p>
-<pre><code>select * from [数据库名.]表名;</code></pre><p>查询部分列表:</p>
-<figure class="highlight bash"><figcaption><span>select 字段列表 from [数据库名.]表名;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 　 select * from [数据库名.]表名 [<span class="built_in">where</span> 条件];</span><br><span class="line">select 字段列表 from [数据库名.]表名 [<span class="built_in">where</span> 条件];</span><br></pre></td></tr></table></figure>
-
-<p>表的复制<br>    语法：</p>
-<pre><code>create table 表名 as select语句;</code></pre><p>将查询结果当做表创建出来。</p>
-<h3 id="SQL语句分类："><a href="#SQL语句分类：" class="headerlink" title="SQL语句分类："></a>SQL语句分类：</h3><p>DQL：查询语言，凡是select都是DQL</p>
-<p>DML：操作语言，insert update delete对表当前的数据增删改</p>
-<p>DDL：定义语言，creat drop alter，对表的结构进行增删改</p>
-<p>TCL：事务控制语言，commit提交事务 rollback回滚</p>
-<p>DCL：grant授权   revoke撤销权限</p>
-<h2 id="二、mysql设置命令"><a href="#二、mysql设置命令" class="headerlink" title="二、mysql设置命令"></a>二、mysql设置命令</h2><p>mysql -h 主机IP地址 -P 端口号 -u 用户名 -p回车<br>Enter Password:密码</p>
-<p> mysqldump -h主机地址 -P端口号 -u用户名 -p密码 –database 数据名 &gt; 文件路径/文件名.sql　　【单个数据库备份】</p>
-<p>source  sql脚本路径名.sql　　　　　　　　　　　　　　　　　　　　　　　　【导入执行备份的sql脚本】</p>
-<p>show create table 表名; 　　　　　　　　　　　　　　　　　　　　　　　　【查看表的引擎，字符集】</p>
-<p>show table status\G 　　　　　　　　　　　　　　　　　　　　　　　　　　【查看全部表的引擎，字符集】</p>
-<p>show engines\G 　　　　　　　　　　　　　　　　　　　　　　　　　　　　【列出数据库支持的引擎】</p>
-<p>alter table 表名 engine=引擎名; 　　　　　　　　　　　　　　　　　　　　　【修改表引擎】</p>
-<p>show create database 数据库名;　　　　　　　　　　　　　　　　　　　　　【 查看字符集】</p>
-<p>create database 表名 character set (gbk); 　　　　　　　　　　　　　　　　   【修改表字符集】</p>
-<p>show character set; 　　　　　　　　　　　　　　　　　　　　　　　　　　  【查看字符集校队】</p>
-<h2 id="三、数据类型"><a href="#三、数据类型" class="headerlink" title="三、数据类型"></a>三、数据类型</h2><p><img src="https://img2018.cnblogs.com/common/1863179/201912/1863179-20191209230419497-12245368.png" alt=""></p>
-<p>字段修饰符<br>unsigned 　　　　(无符号)<br>zerofill 　　　　    (使用0填充)<br>default 　　　　    (默认值)<br>comment　　　　 (字段解释说明)<br>not null　　            (非空)<br>null　　　　　　   (空)<br>unique 　　　　    (唯一索引)<br>index   　　           (普通索引)<br>primary key　　    (主键)<br>auto_increment     (自增)<br>as　　　　　　　 (别名)</p>
-<h2 id="四、约束-Constraint）"><a href="#四、约束-Constraint）" class="headerlink" title="四、约束(Constraint）"></a>四、约束(Constraint）</h2><p>什么是约束？常见的约束有哪些呢？</p>
-<pre><code>在创建表的时候，可以给表的字段添加相应的约束，添加约束的目的是为了保证表中数据的合法性、有效性、完整性。
-常见的约束有哪些呢？
-    非空约束(not null)：约束的字段不能为NULL
-    唯一约束(unique)：约束的字段不能重复
-    主键约束(primary key)：约束的字段既不能为NULL，也不能重复（简称PK）是前两者的和
-    外键约束(foreign key)：...（简称FK）
-    检查约束(check)：注意Oracle数据库有check约束，但是mysql没有，目前mysql不支持该约束。</code></pre><p> mysql提供主键值自增：<br>      <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   drop table if exists t_user;</span><br><span class="line">   create table t_user(</span><br><span class="line">       id int primary key auto_increment,  &#x2F;&#x2F;id字段自动维护一个自增的数字，从1开始，以1递增。</span><br><span class="line">username varchar(255)</span><br><span class="line">     );</span><br><span class="line">   insert into t_user(username) values(&#39;a&#39;); </span><br><span class="line">   insert into t_user(username) values(&#39;b&#39;);</span><br><span class="line">   insert into t_user(username) values(&#39;c&#39;);</span><br><span class="line">   insert into t_user(username) values(&#39;d&#39;);</span><br><span class="line">   insert into t_user(username) values(&#39;e&#39;);</span><br><span class="line">   insert into t_user(username) values(&#39;f&#39;);</span><br><span class="line">   select * from t_user;&#96;</span><br></pre></td></tr></table></figure></p>
-<pre><code>提示：Oracle当中也提供了一个自增机制，叫做：序列(sequence)对象。</code></pre><h2 id="五、事务-Transaction"><a href="#五、事务-Transaction" class="headerlink" title="五、事务(Transaction)"></a>五、事务(Transaction)</h2><p>   1、什么是事务？</p>
-<pre><code>一个事务是一个完整的业务逻辑单元，不可再分。
-
-比如：银行账户，从A账户向B账户转账10000元，需要执行两条update语句。
-    update t_act set balance = balance - 10000 where actno = &apos;act-001&apos;;
-update t_act set balance = balance + 10000 where actno = &apos;act-002&apos;;
-
-以上两条DML语句必须同时成功，或者同时失败，不允许出现一条成功，一条失败。
-
-想要保证以上的两条DML语句同时成功或者同时失败，那么就要使用数据库的&quot;事务机制&quot;。</code></pre><p>   2、和事务相关的语句只有：DML语句。(insert delete update)</p>
-<pre><code>因为他们这三个语句都是和数据库表当中的&quot;数据&quot;相关的。
-事务的存在是为了保证数据的完整性，安全性。</code></pre><p>   3、事务包括四大特性：ACID</p>
-<pre><code>A（Atomicity）:原子性，事务是最小的工作单元，不可再分。
-C（Consistency）:一致性，事务必须保证多条DML语句同时成功或者同时失败。
-I（Isolation）：隔离性，事务A与事务B之间具有隔离。
-D（Durability）:持久性，持久性说的是最终数据必须持久化到硬盘中，事务才算成功结束。</code></pre><p>   4、关于事务之间的隔离性？</p>
-<pre><code>事务隔离性存在隔离级别，理论上隔离级别包括4个：
-    第一级别：读未提交(read uncommitted)
-    对方事务还没有提交，我们当前事务可以读取到对方未提交的数据。
-    读未提交存在脏读(Dirty Read) 现象：表示读到了脏数据。
-第二级别：读已提交(read committed)
-    对方事务提交之后的数据我方可以读取到。
-    读已提交存在的问题是：不可重复读。
-第三级别：可重复读(repeatable read)
-    这种隔离级别解决了：不可重复读问题。
-    这种隔离级别存在的问题是：读取到的数据是幻象。
-第四级别：序列化读/串行化读
-    解决了所有问题。
-    效率低，需要事务排队。
-
-Oracle数据库默认的隔离级别是：第二级别，读已提交。
-mysql数据库默认的隔离级别是：第三级别，可重复读。</code></pre><p>   5、演示事务：<br>       * mysql事务默认情况下是自动提交的。<br>           (什么是自动提交？只要执行任意一条DML语句则提交一次。)怎么关闭默认提交？start transaction;</p>
-<pre><code>   * 建表：
-       drop table if exists t_user;
-   create table t_user(
-       id int primary key auto_increment,
-       username varchar(255)
-     );
-
-   * 演示：mysql中的事务是支持自动提交的，只要执行一条DML语句，则提交一次。
-       mysql&gt; insert into t_user(username) values(&apos;zs&apos;);
-   Querk OK, 1 row affected (0.03 sec)
-   mysql&gt; select * from t_user;
-    +----+----------+
-    | id | username |
-    +----+----------+
-    |  1 | zs       |
-    +----+----------+
-   mysql&gt; rollback;
-   Query OK, 0 rows affected (0.00 sec)
-
-       mysql&gt; select * from t_user;
-     +----+----------+
-     | id | username |
-     +----+----------+
-     |  1 | zs       |
-     +----+----------+
-
-* 演示：使用start transaction; 关闭自动提交机制。
-    mysql&gt; select * from t_user;
-    +----+----------+
-    | id | username |
-    +----+----------+
-    |  1 | zs       |
-    +----+----------+
-    1 row in set (0.00 sec)
-
-    mysql&gt; start transaction;
-    Query OK, 0 rows affected (0.00 sec)
-
-    mysql&gt; insert into t_user(username) values(&quot;lisi&quot;);
-    Query OK, 1 row affected (0.00 sec)
-
-    mysql&gt; select * from t_user;
-    +----+----------+
-    | id | username |
-    +----+----------+
-    |  1 | zs       |
-    |  2 | lisi     |
-    +----+----------+
-    2 rows in set (0.00 sec)
-
-    mysql&gt; insert into t_user(username) values(&quot;wangwu&quot;);
-    Query OK, 1 row affected (0.00 sec)
-
-    mysql&gt; select * from t_user;
-    +----+----------+
-    | id | username |
-    +----+----------+
-    |  1 | zs       |
-    |  2 | lisi     |
-    |  3 | wangwu   |
-    +----+----------+
-    3 rows in set (0.00 sec)
-
-    mysql&gt; rollback;    //回滚
-    Query OK, 0 rows affected (0.00 sec)
-
-    mysql&gt; select * from t_user;
-    +----+----------+
-    | id | username |
-    +----+----------+
-    |  1 | zs       |
-    +----+----------+
-    1 row in set (0.00 sec)
-
-    mysql&gt; start transaction;
-    Query OK, 0 rows affected (0.00 sec)
-
-    mysql&gt; insert into t_user(username) values(&quot;wangwu&quot;);
-    Query OK, 1 row affected (0.00 sec)
-
-    mysql&gt; insert into t_user(username) values(&quot;object&quot;);
-    Query OK, 1 row affected (0.00 sec)
-
-    mysql&gt; insert into t_user(username) values(&quot;joke&quot;);
-    Query OK, 1 row affected (0.00 sec)
-
-    mysql&gt; insert into t_user(username) values(&quot;xiaozhaozhao&quot;);
-    Query OK, 1 row affected (0.00 sec)
-
-    mysql&gt; select * from t_user;
-    +----+--------------+
-    | id | username     |
-    +----+--------------+
-    |  1 | zs           |
-    |  4 | wangwu       |
-    |  5 | object       |
-    |  6 | joke         |
-    |  7 | xiaozhaozhao |
-    +----+--------------+
-    5 rows in set (0.00 sec)
-
-    mysql&gt; commit;
-    Query OK, 0 rows affected (0.00 sec)
-
-    mysql&gt; select * from t_user;
-    +----+--------------+
-    | id | username     |
-    +----+--------------+
-    |  1 | zs           |
-    |  4 | wangwu       |
-    |  5 | object       |
-    |  6 | joke         |
-    |  7 | xiaozhaozhao |
-    +----+--------------+
-    5 rows in set (0.00 sec)
-
-    mysql&gt; rollback;
-    Query OK, 0 rows affected (0.00 sec)
-
-    mysql&gt; select * from t_user;
-    +----+--------------+
-    | id | username     |
-    +----+--------------+
-    |  1 | zs           |
-    |  4 | wangwu       |
-    |  5 | object       |
-    |  6 | joke         |
-    |  7 | xiaozhaozhao |
-    +----+--------------+
-    5 rows in set (0.00 sec)
-
-rollback : 回滚。
-commit ： 提交。
-start transaction : 关闭自动提交机制。</code></pre><h2 id="六、三范式"><a href="#六、三范式" class="headerlink" title="六、三范式"></a>六、三范式</h2><p>拿到sql格式文件导入数据</p>
-<pre><code>create database XXX;
-use XXX;
-source D:\XXX.sql </code></pre><p>数据库设计三范式(重点内容，面试经常会问)</p>
-<p>1、什么是设计范式？</p>
-<pre><code>设计表的依据，按照这三个范式设计的表不会出现数据冗余。</code></pre><p>2、三范式都是哪些？</p>
-<pre><code>第一范式：任何一张表都应该有主键，并且每一个字段原子性不可再分。
-
-第二范式：建立在第一范式的基础上，所有非主键字段完全依赖主键，不能产生部份依赖。
-    多对多？三张表，关系表两个外键。
-    t_student学生表
-    sno(pk)       sname
-    ---------------------
-     1             张三
-     2             李四 
-     3             王五
-
-     t_teacher 讲师表
-     tno(pk)            tname
-     ----------------------
-      1            王老师
-      2            张老师
-      3            李老师
-
-      t_student_teacher_relation 学生讲师关系表
-      id(pk)        sno(fk)          tno(fk)
-      -------------------------------------------
-       1          1                 3
-       2          1            1
-       3          2            2
-       4          2            3
-       5          3            1
-       6          3            3
-
-第三范式：建立在第二范式的基础上，所有非主键字段直接依赖主键，不能产生传递依赖。
-    一对多？两张表，多的表加外键。
-    班级t_class
-    cno(pk)          cname
-    --------------------------
-      1              班级1
-      2              班级2
-
-    学生t_student
-    sno(pk)         sname         classno(fk)
-    --------------------------------------------
-     101         张1          1
-     102             张2          2
-     103         张3          2
-     104         张4          1
-     105         张5          2
-
-  提醒：在实际的开发中，以满足客户需求为主，有的时候会拿冗余换执行速度。</code></pre>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你的馈赠<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/weixin.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据库//" class="article-tag-list-link color4">数据库</a>
+        			<a href="/categories/软件//" class="article-tag-list-link color3">软件</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://usstzt.site/2020/05/06/Mysql%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/05/06/pycharm%E7%A0%B4%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          pycharm破解
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#摘要：mysql的一些基础简单知识"><span class="toc-number">1.</span> <span class="toc-text">摘要：mysql的一些基础简单知识</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、mysql基本语法"><span class="toc-number"></span> <span class="toc-text">一、mysql基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL语句分类："><span class="toc-number">1.</span> <span class="toc-text">SQL语句分类：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、mysql设置命令"><span class="toc-number"></span> <span class="toc-text">二、mysql设置命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、数据类型"><span class="toc-number"></span> <span class="toc-text">三、数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、约束-Constraint）"><span class="toc-number"></span> <span class="toc-text">四、约束(Constraint）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、事务-Transaction"><span class="toc-number"></span> <span class="toc-text">五、事务(Transaction)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、三范式"><span class="toc-number"></span> <span class="toc-text">六、三范式</span></a>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-
-      <div id="gitalk-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
-
-<script>
-var gitalk = new Gitalk({
-  clientID: 'c9bb4099d790bb668536',
-  clientSecret: '71be7cd96bcc3bbc25c7b88fd25296b53074062f',
-  repo: 'git_comment',
-  owner: 'ztscott',
-  admin: ['erbiduo'],
-  id: md5(window.location.pathname),
-  distractionFreeMode: true
-})
-
-gitalk.render('gitalk-container')
-</script>
-
-  
-
-
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Mysql基础知识
-    </h1>
-  
-
-        
-        <a href="/2020/05/06/Mysql%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2020-05-06T02:52:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-06</time>
-</a>
-        
     
-    
-        
-          <span class="archive-article-date">
-              阅读量 <span id="busuanzi_value_page_pv"></span>
-          </span>
-        
-    
-    
-      </header>
-
-
 
 
           </div>
@@ -733,9 +283,9 @@ gitalk.render('gitalk-container')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
