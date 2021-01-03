@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://usstzt.site">
-  <title>Tag: hexo | UsstZt</title>
+  <title>二叉树的三种遍历及java实现 | UsstZt</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浮生若梦，为欢几何">
-<meta property="og:type" content="website">
-<meta property="og:title" content="UsstZt">
-<meta property="og:url" content="http://usstzt.site/tags/hexo/index.html">
+  <meta name="description" content="##二叉树的定义    二叉树(binary tree)是结点的有限集合，这个集合或者空，或者由一个根及两个互不相交的称为这个根的左子树或右子树构成.从定义可以看出，二叉树包括：1.空树  2.只有一个根节点  3.只有左子树    4.只有右子树   5.左右子树都存在     有且仅有这5中表现形式                                       ##二叉树的遍历">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二叉树的三种遍历及java实现">
+<meta property="og:url" content="http://usstzt.site/2021/01/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%89%E7%A7%8D%E9%81%8D%E5%8E%86%E5%8F%8Ajava%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="UsstZt">
-<meta property="og:description" content="浮生若梦，为欢几何">
+<meta property="og:description" content="##二叉树的定义    二叉树(binary tree)是结点的有限集合，这个集合或者空，或者由一个根及两个互不相交的称为这个根的左子树或右子树构成.从定义可以看出，二叉树包括：1.空树  2.只有一个根节点  3.只有左子树    4.只有右子树   5.左右子树都存在     有且仅有这5中表现形式                                       ##二叉树的遍历">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-03T07:33:14.000Z">
+<meta property="article:modified_time" content="2021-01-03T07:44:59.204Z">
 <meta property="article:author" content="Zhangtao">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="UsstZt" type="application/atom+xml">
@@ -178,71 +181,309 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-二叉树的三种遍历及java实现" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/06/hexo%20yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/" class="archive-article-date">
-  	<time datetime="2020-05-06T02:52:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/06/hexo%20yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/">hexo yilia主题添加评论</a>
+    <h1 class="article-title" itemprop="name">
+      二叉树的三种遍历及java实现
     </h1>
   
 
-        <div class="article-info info-on-right">
+	<!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.2k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">5分</span>
+      </span>
+    </span>
+</div>
+
           
+        <!-- 添加完成 -->
+        
+        <a href="/2021/01/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%89%E7%A7%8D%E9%81%8D%E5%8E%86%E5%8F%8Ajava%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
+  	<time datetime="2021-01-03T07:33:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##二叉树的定义<br>    二叉树(binary tree)是结点的有限集合，这个集合或者空，或者由一个根及两个互不相交的称为这个根的左子树或右子树构成.<br>从定义可以看出，二叉树包括：1.空树 </p>
+<p>2.只有一个根节点 </p>
+<p>3.只有左子树   </p>
+<p>4.只有右子树  </p>
+<p>5.左右子树都存在    </p>
+<p>有且仅有这5中表现形式                                      </p>
+<p>##二叉树的遍历<br>    二叉树的遍历分为三种：前序遍历 中序遍历 后序遍历；</p>
+<p>前序遍历：按照“根左右”,先遍历根节点，再遍历左子树 ，再遍历右子树</p>
+<p>中序遍历：按照“左根右“,先遍历左子树，再遍历根节点，最后遍历右子树</p>
+<p>后续遍历：按照“左右根”，先遍历左子树，再遍历右子树，最后遍历根节点</p>
+<p>其中前，后，中指的是每次遍历时候的根节点被遍历的顺序</p>
+<p>##二叉树遍历的java实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class Tree &#123;</span><br><span class="line">    private Node root;</span><br><span class="line">    private List&lt;Node&gt; list&#x3D;new ArrayList&lt;Node&gt;();</span><br><span class="line">    public Tree()&#123;</span><br><span class="line">        init();</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;树的初始化:先从叶节点开始,由叶到根</span><br><span class="line">    public void init()&#123;</span><br><span class="line">        Node x&#x3D;new Node(&quot;X&quot;,null,null);</span><br><span class="line">        Node y&#x3D;new Node(&quot;Y&quot;,null,null);</span><br><span class="line">        Node d&#x3D;new Node(&quot;d&quot;,x,y);</span><br><span class="line">        Node e&#x3D;new Node(&quot;e&quot;,null,null);</span><br><span class="line">        Node f&#x3D;new Node(&quot;f&quot;,null,null);</span><br><span class="line">        Node c&#x3D;new Node(&quot;c&quot;,e,f);</span><br><span class="line">        Node b&#x3D;new Node(&quot;b&quot;,d,null);</span><br><span class="line">        Node a&#x3D;new Node(&quot;a&quot;,b,c);</span><br><span class="line">        root &#x3D;a;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;定义节点类：</span><br><span class="line">    private class Node&#123;</span><br><span class="line">      private String data;</span><br><span class="line">      private Node lchid;&#x2F;&#x2F;定义指向左子树的指针</span><br><span class="line">      private Node rchild;&#x2F;&#x2F;定义指向右子树的指针</span><br><span class="line">      public Node(String data,Node lchild,Node rchild)&#123;</span><br><span class="line">          this.data&#x3D;data;</span><br><span class="line">          this.lchid&#x3D;lchild;</span><br><span class="line">          this.rchild&#x3D;rchild;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">      * 对该二叉树进行前序遍历 结果存储到list中 前序遍历:ABDXYCEF</span><br><span class="line">      *&#x2F;</span><br><span class="line">     public void preOrder(Node node)</span><br><span class="line">     &#123;</span><br><span class="line"></span><br><span class="line">            list.add(node); &#x2F;&#x2F;先将根节点存入list</span><br><span class="line">            &#x2F;&#x2F;如果左子树不为空继续往左找，在递归调用方法的时候一直会将子树的根存入list，这就做到了先遍历根节点</span><br><span class="line">            if(node.lchid !&#x3D; null)</span><br><span class="line">            &#123;</span><br><span class="line">                preOrder(node.lchid);</span><br><span class="line">            &#125;</span><br><span class="line">            &#x2F;&#x2F;无论走到哪一层，只要当前节点左子树为空，那么就可以在右子树上遍历，保证了根左右的遍历顺序</span><br><span class="line">            if(node.rchild !&#x3D; null)</span><br><span class="line">            &#123;</span><br><span class="line">                preOrder(node.rchild);</span><br><span class="line">            &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     &#x2F;**</span><br><span class="line">      * 对该二叉树进行中序遍历 结果存储到list中</span><br><span class="line">      *&#x2F;</span><br><span class="line">     public void inOrder(Node node)</span><br><span class="line">     &#123;</span><br><span class="line">        if(node.lchid!&#x3D;null)&#123;</span><br><span class="line">            inOrder(node.lchid);</span><br><span class="line">        &#125;</span><br><span class="line">        list.add(node);</span><br><span class="line">        if(node.rchild!&#x3D;null)&#123;</span><br><span class="line">            inOrder(node.rchild);</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     &#x2F;**</span><br><span class="line">      * 对该二叉树进行后序遍历 结果存储到list中</span><br><span class="line">      *&#x2F;</span><br><span class="line">     public void postOrder(Node node)</span><br><span class="line">     &#123;</span><br><span class="line">         if(node.lchid!&#x3D;null)&#123;</span><br><span class="line">             postOrder(node.lchid);</span><br><span class="line">         &#125;</span><br><span class="line">         if(node.rchild!&#x3D;null)&#123;</span><br><span class="line">             postOrder(node.rchild);</span><br><span class="line">         &#125;</span><br><span class="line">         list.add(node);</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     &#x2F;**</span><br><span class="line">      * 返回当前数的深度</span><br><span class="line">      *  说明:</span><br><span class="line">      *  1、如果一棵树只有一个结点，它的深度为1。</span><br><span class="line">      *  2、如果根结点只有左子树而没有右子树，那么树的深度是其左子树的深度加1；</span><br><span class="line">      *  3、如果根结点只有右子树而没有左子树，那么树的深度应该是其右子树的深度加1；</span><br><span class="line">      *  4、如果既有右子树又有左子树，那该树的深度就是其左、右子树深度的较大值再加1。</span><br><span class="line">      *  </span><br><span class="line">      * @return</span><br><span class="line">      *&#x2F;</span><br><span class="line">     public int getTreeDepth(Node node) &#123;</span><br><span class="line"></span><br><span class="line">            if(node.lchid &#x3D;&#x3D; null &amp;&amp; node.rchild &#x3D;&#x3D; null)</span><br><span class="line">            &#123;</span><br><span class="line">                return 1;</span><br><span class="line">            &#125;</span><br><span class="line">            int left&#x3D;0,right &#x3D; 0;</span><br><span class="line">            if(node.lchid!&#x3D;null)</span><br><span class="line">            &#123;</span><br><span class="line">                left &#x3D; getTreeDepth(node.lchid);</span><br><span class="line">            &#125;</span><br><span class="line">            if(node.rchild!&#x3D;null)</span><br><span class="line">            &#123;</span><br><span class="line">                right &#x3D; getTreeDepth(node.rchild);</span><br><span class="line">            &#125;</span><br><span class="line">            return left&gt;right?left+1:right+1;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;得到遍历结果</span><br><span class="line">     public List&lt;Node&gt; getResult()</span><br><span class="line">     &#123;</span><br><span class="line">      return list;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     public static void main(String[] args) &#123;</span><br><span class="line">        Tree tree&#x3D;new Tree();</span><br><span class="line">        System.out.println(&quot;根节点是:&quot;+tree.root);</span><br><span class="line">        &#x2F;&#x2F;tree.preOrder(tree.root);</span><br><span class="line">        tree.postOrder(tree.root);</span><br><span class="line">        for(Node node:tree.getResult())&#123;</span><br><span class="line">            System.out.println(node.data);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;树的深度是&quot;+tree.getTreeDepth(tree.root));</span><br><span class="line"></span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>##总结<br>二叉树是一个相当重要的数据结构，它的应用面非常广，并且由他改进生成了很多重要的树类数据结构，如红黑树，堆等，应用价值之高后面深入学习便有体会，因此，掌握它的基本特征和遍历方式实现是学好后续数据结构的基础，理论方面其实我们看到二叉树的形状，我们自己画图都能总结出来，但是代码实现这一块，初学者不是很好理解，树的遍历利用了递归的思想，递归的思想本质无非就是循环，方法调方法，所以，理解二叉树遍历的代码实现最好的方式就是按照它的遍历思想自己画出图来一步一步的遍历一遍，先把这个遍历过程想明白了，然后再根据递归的思想，什么时候调什么样的方法，自然就能很容易想明白了</p>
+
+      
+      
+      
+       
+         <div class="essayending">
+           <div>
+            <div style="text-align:center;color: #000011;font-size:22px;">
+            <br/>
+            <br/>
+            -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+            <br/>
+            <br/>
+             <br/>
+             <br/>
+            </div>
+           </div>
+         </div>
+       
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              打赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你的馈赠<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://usstzt.site/2021/01/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%89%E7%A7%8D%E9%81%8D%E5%8E%86%E5%8F%8Ajava%E5%AE%9E%E7%8E%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/05/26/bettercap%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">kali bettercap的使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
   
 
+  
+
+  
+
+  
+
+
+
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      二叉树的三种遍历及java实现
+    </h1>
+  
+
+        
+        <a href="/2021/01/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%89%E7%A7%8D%E9%81%8D%E5%8E%86%E5%8F%8Ajava%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
+  	<time datetime="2021-01-03T07:33:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-03</time>
+</a>
+        
     
+    
+        
+          <span class="archive-article-date">
+              阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+    
+    
+      </header>
+
+
+
+   
+       <section id="comments" class="comments">
+         <style>
+           .comments{margin:30px;padding:10px;background:#fff}
+           @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+         </style>
+         <div id="vcomment" class="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var notify = 'false' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  new Valine({
+    av: AV,
+    el: '#vcomment',
+    notify: notify,
+    app_id: "otpRxY6fAQNhhBfuMbTCpqkz-gzGzoHsz",
+    app_key: "yUo0fhYhFjOHK3VWJbCnVu8T",
+    placeholder: "发表你的评论吧",
+    avatar: "",
+  });
+</script>
+
+     </section>
+   
 
 
           </div>
@@ -295,9 +536,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
