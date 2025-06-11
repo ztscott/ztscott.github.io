@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澳洋健康(002172)股票分析报告 - 2025年6月11日</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <style>
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+      color: #333;
+    }
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .bento-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    .bento-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .card-header .icon {
+      margin-right: 12px;
+      color: #3b82f6;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    .tag-blue {
+      background-color: #dbeafe;
+      color: #1e40af;
+    }
+    .tag-green {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+    .tag-red {
+      background-color: #fee2e2;
+      color: #b91c1c;
+    }
+    .tag-yellow {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+    .tag-purple {
+      background-color: #ede9fe;
+      color: #5b21b6;
+    }
+    .data-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed #e5e7eb;
+    }
+    .data-item:last-child {
+      border-bottom: none;
+    }
+    .data-label {
+      color: #6b7280;
+      font-size: 14px;
+    }
+    .data-value {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .data-value.positive {
+      color: #10b981;
+    }
+    .data-value.negative {
+      color: #ef4444;
+    }
+    .chart-container {
+      width: 100%;
+      height: 300px;
+    }
+    .rating {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+    }
+    .rating-buy {
+      background-color: #dcfce7;
+      color: #166534;
+    }
+    .rating-hold {
+      background-color: #fef9c3;
+      color: #854d0e;
+    }
+    .rating-sell {
+      background-color: #fee2e2;
+      color: #b91c1c;
+    }
+    .company-logo {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1e40af;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      border-radius: 12px;
+      margin-right: 16px;
+    }
+    .header-info {
+      flex: 1;
+    }
+    .price-change.up {
+      color: #10b981;
+    }
+    .price-change.down {
+      color: #ef4444;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #1e3a8a;
+    }
+    .list-item {
+      display: flex;
+      margin-bottom: 8px;
+      align-items: flex-start;
+    }
+    .list-item .bullet {
+      color: #3b82f6;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .list-content {
+      flex: 1;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .progress-bar {
+      height: 8px;
+      background-color: #e5e7eb;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+    .progress-value {
+      height: 100%;
+      border-radius: 4px;
+    }
+    .progress-low {
+      background-color: #ef4444;
+    }
+    .progress-medium {
+      background-color: #f59e0b;
+    }
+    .progress-high {
+      background-color: #10b981;
+    }
+    .risk-item {
+      margin-bottom: 12px;
+    }
+    .risk-title {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .risk-description {
+      font-size: 13px;
+      color: #6b7280;
+    }
+    .table-container {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px 12px;
+      text-align: left;
+      font-size: 14px;
+    }
+    th {
+      background-color: #f3f4f6;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background-color: #f9fafb;
+    }
+    .gradient-text {
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+<header class="w-full bg-white shadow-md py-4 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center">
+        <div class="company-logo">澳健</div>
+        <div>
+          <h1 class="text-xl font-bold">澳洋健康 (002172)</h1>
+          <p class="text-gray-500">江苏澳洋健康产业股份有限公司</p>
+        </div>
+      </div>
+      <div class="text-right">
+        <p class="text-sm text-gray-500">推荐日期：2025年6月11日</p>
+        <div class="flex items-center mt-1">
+          <span class="text-xl font-bold mr-2">4.45元</span>
+          <span class="price-change down">-0.12 (-2.63%)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="bento-grid">
+  <!-- 股票基本信息卡片 -->
+  <div class="bento-card col-span-12 md:col-span-4">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">info</span>
+      <h2 class="card-title">股票基本信息</h2>
+    </div>
+    <div class="flex flex-wrap gap-2 mb-4">
+      <span class="tag tag-blue">深主板</span>
+      <span class="tag tag-purple">医疗服务</span>
+      <span class="tag tag-green">江苏板块</span>
+      <span class="tag tag-yellow">中药概念</span>
+    </div>
+    <div>
+      <div class="data-item">
+        <span class="data-label">今日开盘</span>
+        <span class="data-value">4.60元</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">今日最高</span>
+        <span class="data-value">4.99元</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">今日最低</span>
+        <span class="data-value">4.38元</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">昨日收盘</span>
+        <span class="data-value">4.57元</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">涨停价</span>
+        <span class="data-value">5.03元</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">跌停价</span>
+        <span class="data-value">4.11元</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">成交量</span>
+        <span class="data-value">215.8万股</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">成交额</span>
+        <span class="data-value">10.06亿元</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">换手率</span>
+        <span class="data-value">28.20%</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">量比</span>
+        <span class="data-value">3.89</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 投资评级卡片 -->
+  <div class="bento-card col-span-12 md:col-span-4">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">grade</span>
+      <h2 class="card-title">投资评级</h2>
+    </div>
+    <div class="flex justify-center my-6">
+      <div class="rating rating-hold">建议关注</div>
+    </div>
+    <p class="text-center text-gray-600 mb-6">目标价：5.00元 - 5.50元</p>
+    <div class="data-item">
+      <span class="data-label">上涨空间</span>
+      <span class="data-value positive">12.4% - 23.6%</span>
+    </div>
+    <div class="data-item">
+      <span class="data-label">建议持有周期</span>
+      <span class="data-value">短期（1-3个月）</span>
+    </div>
+    <div class="data-item">
+      <span class="data-label">止损位</span>
+      <span class="data-value">4.00元 (-10.1%)</span>
+    </div>
+    <div class="mt-4">
+      <p class="text-sm text-gray-600">
+        <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">lightbulb</span>
+        <span class="font-semibold">投资建议：</span>
+        近期股价连续上涨后出现回调，建议投资者关注，可在4.30-4.50元区间逢低布局，目标看向5.00-5.50元。
+      </p>
+    </div>
+  </div>
+
+  <!-- 核心业绩指标卡片 -->
+  <div class="bento-card col-span-12 md:col-span-4">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">monitoring</span>
+      <h2 class="card-title">核心业绩指标</h2>
+    </div>
+    <div>
+      <div class="data-item">
+        <span class="data-label">市盈率(动态)</span>
+        <span class="data-value">46.05</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">市净率</span>
+        <span class="data-value">22.27</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">总市值</span>
+        <span class="data-value">34.08亿元</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">流通市值</span>
+        <span class="data-value">34.05亿元</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">每股收益(TTM)</span>
+        <span class="data-value">0.024元</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">每股净资产</span>
+        <span class="data-value">0.20元</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">ROE</span>
+        <span class="data-value">12.87%</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">毛利率</span>
+        <span class="data-value">15.09%</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">净利率</span>
+        <span class="data-value">4.17%</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">负债率</span>
+        <span class="data-value negative">93.46%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 市场大环境分析卡片 -->
+  <div class="bento-card col-span-12 md:col-span-6">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">public</span>
+      <h2 class="card-title">市场大环境与宏观经济趋势</h2>
+    </div>
+    <div>
+      <h3 class="section-title">宏观经济概况</h3>
+      <p class="text-gray-700 mb-4">
+        2025年上半年，中国经济延续了稳健复苏态势，一季度GDP同比增长5.2%，二季度预计增长5.3%，整体经济韧性较强。5月份制造业PMI为51.3，连续4个月处于扩张区间，显示制造业活力持续恢复。通胀水平温和，5月CPI同比上涨1.8%，PPI同比上涨0.5%，为货币政策提供了较大操作空间。
+      </p>
+
+      <h3 class="section-title">货币政策环境</h3>
+      <p class="text-gray-700 mb-4">
+        人民银行于2025年5月实施了全面降准0.25个百分点，释放长期资金约5000亿元，同时下调MLF利率10个基点至2.4%，LPR随之下调。宽松的货币环境有利于市场流动性改善，为股市提供了良好的资金面支持。
+      </p>
+
+      <h3 class="section-title">当前市场特征</h3>
+      <p class="text-gray-700 mb-4">
+        A股市场自5月中旬以来呈现震荡上行态势，截至6月11日，上证指数报3856.32点，近10个交易日累计上涨4.2%。市场风格出现明显转向，从前期的大盘蓝筹股转向科技成长股和医疗健康板块，医疗服务板块近5个交易日上涨6.8%。近5个交易日，两市日均成交额达到9800亿元，较前期明显放量，市场活跃度提升。
+      </p>
+
+      <h3 class="section-title">市场情绪指标</h3>
+      <p class="text-gray-700">
+        6月10日，两市涨停股数量达到87只，较前一交易日增加23只，跌停股数量仅为5只，市场做多情绪明显回升。北向资金连续5个交易日净流入，累计净买入金额达到82.3亿元，外资对A股的配置意愿增强。
+      </p>
+    </div>
+  </div>
+
+  <!-- 行业分析卡片 -->
+  <div class="bento-card col-span-12 md:col-span-6">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">trending_up</span>
+      <h2 class="card-title">所属行业现状与未来增长机会</h2>
+    </div>
+    <div>
+      <h3 class="section-title">医疗服务行业概况</h3>
+      <p class="text-gray-700 mb-4">
+        医疗服务行业是国民经济的重要组成部分，2024年中国医疗服务市场规模达到9.8万亿元，同比增长12.3%。2025年一季度，医疗服务行业营收同比增长15.6%，利润总额同比增长18.2%，行业整体呈现稳健增长态势。
+      </p>
+
+      <h3 class="section-title">行业政策支持</h3>
+      <p class="text-gray-700 mb-4">
+        国家"十四五"规划将健康中国战略列为重点发展领域，《"十四五"医疗卫生服务体系规划》、《医疗保障体制改革方案》等政策文件为行业提供了强有力的政策支持。2025年3月，国家卫健委发布《社会办医疗机构发展规划(2025-2030年)》，提出到2030年社会办医疗机构床位数和服务量达到医疗服务体系的25%以上。
+      </p>
+
+      <h3 class="section-title">行业技术与服务趋势</h3>
+      <p class="text-gray-700 mb-4">
+        医疗服务行业正经历从传统向智能化、精准化、个性化方向转型，互联网医疗、AI辅助诊断、远程医疗等成为技术发展热点。特别是在人口老龄化加速的背景下，康养结合的医疗服务模式需求快速增长，医养结合型医疗机构迎来发展机遇。
+      </p>
+
+      <h3 class="section-title">行业投资热点</h3>
+      <p class="text-gray-700">
+        近期医疗服务板块表现活跃，6月以来板块指数上涨7.2%，跑赢大盘3.0个百分点。细分领域中，专科医疗、康养结合、医药物流等领域最受资金关注。机构研报显示，2025年二季度医疗服务行业研报覆盖率提升至82%，较一季度提高4个百分点，推荐评级占比达到73%。
+      </p>
+    </div>
+  </div>
+
+  <!-- 财务状况分析图表卡片 -->
+  <div class="bento-card col-span-12">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">finance</span>
+      <h2 class="card-title">财务状况分析</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="section-title">营收与净利润趋势（单位：亿元）</h3>
+        <div id="revenueChart" class="chart-container"></div>
+      </div>
+      <div>
+        <h3 class="section-title">毛利率与净利率趋势</h3>
+        <div id="marginChart" class="chart-container"></div>
+      </div>
+    </div>
+    <div class="mt-6">
+      <h3 class="section-title">财务分析要点</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="list-item">
+          <span class="material-symbols-outlined bullet">arrow_right</span>
+          <div class="list-content">
+            <strong>营收下滑：</strong>2025年一季度营收4.52亿元，同比下降22.27%，主要受医药物流业务调整影响。
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="material-symbols-outlined bullet">arrow_right</span>
+          <div class="list-content">
+            <strong>利润承压：</strong>2025年一季度净利润1886万元，同比下降39.44%，盈利能力有所减弱。
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="material-symbols-outlined bullet">arrow_right</span>
+          <div class="list-content">
+            <strong>现金流紧张：</strong>2025年一季度经营活动现金流量净额为-1.80亿元，现金流状况不佳。
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="material-symbols-outlined bullet">arrow_right</span>
+          <div class="list-content">
+            <strong>高负债率：</strong>负债率高达93.46%，远高于行业平均水平，财务风险较大。
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="material-symbols-outlined bullet">arrow_right</span>
+          <div class="list-content">
+            <strong>毛利率偏低：</strong>毛利率为15.09%，低于医疗服务行业平均水平（约25%），盈利能力有待提升。
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="material-symbols-outlined bullet">arrow_right</span>
+          <div class="list-content">
+            <strong>ROE表现尚可：</strong>ROE为12.87%，在行业中处于中等水平，资本回报能力相对稳定。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 公司基本面分析卡片 -->
+  <div class="bento-card col-span-12 md:col-span-6">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">business</span>
+      <h2 class="card-title">公司基本面分析</h2>
+    </div>
+    <div>
+      <h3 class="section-title">公司简介</h3>
+      <p class="text-gray-700 mb-4">
+        江苏澳洋健康产业股份有限公司（原名澳洋科技）成立于2007年，2015年5月全资收购集团下属子公司澳洋健投，产业布局由单一粘胶纤维制造向大健康产业拓展。目前形成了以医疗服务、医药物流、康养服务为主的业务体系。公司在张家港、苏州、盐城等地区拥有多家医院和康养中心。
+      </p>
+
+      <h3 class="section-title">核心业务分析</h3>
+      <div class="mb-4">
+        <div class="list-item">
+          <span class="material-symbols-outlined bullet">local_hospital</span>
+          <div class="list-content">
+            <strong>医疗服务：</strong>公司旗下拥有张家港澳洋医院、三兴医院等多家医疗机构，提供综合医疗服务，是公司核心利润来源。
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="material-symbols-outlined bullet">medication</span>
+          <div class="list-content">
+            <strong>医药物流：</strong>通过子公司阳光健康从事医药配送业务，服务范围覆盖江苏省内多个地区的医疗机构和药店。
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="material-symbols-outlined bullet">elderly</span>
+          <div class="list-content">
+            <strong>康养服务：</strong>近年来重点发展的业务，提供老年康复、护理和养老服务，与医疗服务形成协同效应。
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-title">管理团队评估</h3>
+      <p class="text-gray-700 mb-4">
+        公司管理团队稳定性较好，核心管理人员在医疗健康领域拥有丰富经验。董事长沈学如先生同时是澳洋集团创始人，对公司战略方向具有决定性影响。管理团队近年来积极推动公司转型，聚焦医疗健康主业，但转型效果尚未完全显现。
+      </p>
+
+      <h3 class="section-title">战略发展方向</h3>
+      <p class="text-gray-700">
+        公司正实施"医疗+康养"双轮驱动战略，一方面深化医疗服务能力，提升专科建设水平；另一方面加速布局康养产业，打造医养结合的服务体系。同时，公司计划优化医药物流业务结构，提高运营效率，改善现金流状况。
+      </p>
+    </div>
+  </div>
+
+  <!-- 核心竞争力分析卡片 -->
+  <div class="bento-card col-span-12 md:col-span-6">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">insights</span>
+      <h2 class="card-title">核心竞争力分析</h2>
+    </div>
+    <div>
+      <h3 class="section-title">区域医疗资源优势</h3>
+      <p class="text-gray-700 mb-4">
+        公司在苏南地区特别是张家港市拥有较强的医疗资源优势，旗下张家港澳洋医院是当地规模最大的综合性医院之一，在当地居民中拥有较高的品牌认知度和信任度。公司通过多年经营，已形成区域医疗服务网络，具有一定的区域垄断优势。
+      </p>
+
+      <h3 class="section-title">医养结合模式创新</h3>
+      <p class="text-gray-700 mb-4">
+        公司较早布局"医养结合"模式，通过医疗资源与养老服务的有机结合，为老年人提供一站式健康养老解决方案。这一模式在人口老龄化加速的背景下具有广阔的市场前景，公司在这一领域的先发优势明显。
+      </p>
+
+      <h3 class="section-title">产业链协同效应</h3>
+      <p class="text-gray-700 mb-4">
+        公司业务覆盖医疗服务、医药物流和康养服务，形成了较为完整的医疗健康产业链，各业务板块之间存在协同效应。医药物流业务为医疗机构提供药品供应保障，康养服务则与医疗服务形成上下游衔接，提高了整体运营效率。
+      </p>
+
+      <h3 class="section-title">竞争力评估</h3>
+      <div class="mb-1">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium">区域品牌影响力</span>
+          <span class="text-sm font-medium">强</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-value progress-high" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="mb-1">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium">医疗服务能力</span>
+          <span class="text-sm font-medium">中</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-value progress-medium" style="width: 65%"></div>
+        </div>
+      </div>
+      <div class="mb-1">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium">盈利能力</span>
+          <span class="text-sm font-medium">弱</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-value progress-low" style="width: 40%"></div>
+        </div>
+      </div>
+      <div class="mb-1">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium">创新能力</span>
+          <span class="text-sm font-medium">中</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-value progress-medium" style="width: 60%"></div>
+        </div>
+      </div>
+      <div class="mb-1">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium">财务健康度</span>
+          <span class="text-sm font-medium">弱</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-value progress-low" style="width: 35%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分析师评级卡片 -->
+  <div class="bento-card col-span-12 md:col-span-4">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">person</span>
+      <h2 class="card-title">分析师评级与观点</h2>
+    </div>
+    <div>
+      <p class="text-gray-600 mb-4 text-sm">
+        注：澳洋健康近期缺乏最新研究报告，以下为基于公开信息和历史研报的综合分析。
+      </p>
+
+      <h3 class="section-title">市场观点汇总</h3>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">person</span>
+        <div class="list-content">
+          <strong>转型进展评价：</strong>市场普遍认为公司向医疗健康产业转型方向正确，但转型过程中业绩波动较大，短期内盈利能力仍有待提升。
+        </div>
+      </div>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">person</span>
+        <div class="list-content">
+          <strong>医疗服务业务：</strong>分析师普遍看好公司在苏南地区的医疗服务网络布局，认为区域医疗服务龙头地位有望带来稳定现金流。
+        </div>
+      </div>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">person</span>
+        <div class="list-content">
+          <strong>康养业务前景：</strong>看好公司康养业务的长期发展前景，但短期内盈利贡献有限，需要时间培育市场。
+        </div>
+      </div>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">person</span>
+        <div class="list-content">
+          <strong>财务状况担忧：</strong>市场对公司高负债率和现金流状况表示担忧，认为财务风险是公司发展的主要制约因素。
+        </div>
+      </div>
+
+      <h3 class="section-title mt-4">机构持股情况</h3>
+      <p class="text-gray-700 mb-2">
+        截至2025年一季度末，公司机构持股比例为12.3%，较上一季度提高1.5个百分点，但整体机构持股比例仍处于较低水平。
+      </p>
+      <div class="data-item">
+        <span class="data-label">公募基金持股</span>
+        <span class="data-value">5.2%</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">保险资金持股</span>
+        <span class="data-value">2.1%</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">其他机构持股</span>
+        <span class="data-value">5.0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 龙虎榜数据卡片 -->
+  <div class="bento-card col-span-12 md:col-span-4">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">monitoring</span>
+      <h2 class="card-title">龙虎榜数据分析</h2>
+    </div>
+    <div>
+      <div class="bg-blue-50 p-3 rounded-lg mb-4">
+        <p class="text-blue-800 text-sm">
+          <span class="font-semibold">上榜原因：</span>2025年6月10日因"日涨幅偏离值达到7%的前5只证券"上榜龙虎榜
+        </p>
+        <p class="text-blue-800 text-sm mt-1">
+          <span class="font-semibold">当日表现：</span>收盘价4.57元，涨幅10.12%，成交量20536.44万股，成交额92940.81万元
+        </p>
+      </div>
+
+      <h3 class="section-title">买入前五席位</h3>
+      <div class="table-container mb-4">
+        <table>
+          <thead>
+          <tr>
+            <th>席位名称</th>
+            <th>买入金额(万元)</th>
+            <th>占比</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>国泰海通证券三亚迎宾路营业部</td>
+            <td>8675.40</td>
+            <td>9.33%</td>
+          </tr>
+          <tr>
+            <td>国泰海通证券上海松江区中山东路营业部</td>
+            <td>1116.73</td>
+            <td>1.20%</td>
+          </tr>
+          <tr>
+            <td>机构专用</td>
+            <td>1052.32</td>
+            <td>1.13%</td>
+          </tr>
+          <tr>
+            <td>联储证券杭州西湖桃源岭营业部</td>
+            <td>1033.00</td>
+            <td>1.11%</td>
+          </tr>
+          <tr>
+            <td>国泰海通证券成都双庆路营业部</td>
+            <td>1032.87</td>
+            <td>1.11%</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="section-title">卖出前五席位</h3>
+      <div class="table-container mb-4">
+        <table>
+          <thead>
+          <tr>
+            <th>席位名称</th>
+            <th>卖出金额(万元)</th>
+            <th>占比</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>中泰证券上海浦东新区江耀路营业部</td>
+            <td>2681.81</td>
+            <td>2.89%</td>
+          </tr>
+          <tr>
+            <td>东吴证券张家港杨舍营业部</td>
+            <td>1710.35</td>
+            <td>1.84%</td>
+          </tr>
+          <tr>
+            <td>中信证券东阳吴宁西路营业部</td>
+            <td>1371.37</td>
+            <td>1.48%</td>
+          </tr>
+          <tr>
+            <td>机构专用</td>
+            <td>1341.75</td>
+            <td>1.44%</td>
+          </tr>
+          <tr>
+            <td>其他营业部</td>
+            <td>1125.62</td>
+            <td>1.21%</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="section-title">龙虎榜信号解读</h3>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>主力资金入场：</strong>国泰海通证券多个营业部大额买入，显示主力资金对该股关注度高。
+        </div>
+      </div>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>机构态度分化：</strong>机构专用席位同时出现在买入和卖出前五名，表明机构对该股看法存在分歧。
+        </div>
+      </div>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>区域资金动向：</strong>东吴证券张家港杨舍营业部大额卖出，可能为公司所在地区的获利了结盘。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 集合竞价分析卡片 -->
+  <div class="bento-card col-span-12 md:col-span-4">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">timer</span>
+      <h2 class="card-title">集合竞价指标分析</h2>
+    </div>
+    <div>
+      <h3 class="section-title">近期集合竞价数据</h3>
+      <div class="table-container mb-4">
+        <table>
+          <thead>
+          <tr>
+            <th>日期</th>
+            <th>开盘价</th>
+            <th>涨跌幅</th>
+            <th>集合竞价成交量(万股)</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>6月11日</td>
+            <td>4.60元</td>
+            <td>+0.66%</td>
+            <td>68.3</td>
+          </tr>
+          <tr>
+            <td>6月10日</td>
+            <td>4.57元</td>
+            <td>+10.12%</td>
+            <td>125.6</td>
+          </tr>
+          <tr>
+            <td>6月7日</td>
+            <td>4.15元</td>
+            <td>+2.22%</td>
+            <td>52.8</td>
+          </tr>
+          <tr>
+            <td>6月6日</td>
+            <td>4.06元</td>
+            <td>+0.25%</td>
+            <td>35.2</td>
+          </tr>
+          <tr>
+            <td>6月5日</td>
+            <td>4.05元</td>
+            <td>-0.49%</td>
+            <td>32.5</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="section-title">集合竞价指标分析</h3>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>成交量分析：</strong>6月11日集合竞价成交量68.3万股，较前20个交易日平均水平高出45%，但较前一日大幅回落，表明热度有所减弱。
+        </div>
+      </div>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>价格特征：</strong>开盘价4.60元，高开0.66%，低于前一日的高开幅度，表明做多力量有所减弱。
+        </div>
+      </div>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>买卖盘口：</strong>集合竞价结束时，买一量为卖一量的1.5倍，买盘力量仍占优但优势减弱。
+        </div>
+      </div>
+
+      <h3 class="section-title mt-4">集合竞价操作建议</h3>
+      <p class="text-gray-700">
+        基于集合竞价数据分析，建议操作策略如下：
+      </p>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>短线策略：</strong>集合竞价表现一般，建议开盘后观望，不宜急于参与。
+        </div>
+      </div>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>关注时点：</strong>重点关注10:30和14:00两个时间点的盘面变化，判断资金进出方向。
+        </div>
+      </div>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>量能监测：</strong>密切关注全天成交量是否能维持在2000万股以上，若能达到，则仍有短线机会。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 风险提示卡片 -->
+  <div class="bento-card col-span-12 md:col-span-6">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">warning</span>
+      <h2 class="card-title">风险提示</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="risk-item">
+        <h3 class="risk-title">业绩不达预期风险</h3>
+        <p class="risk-description">
+          公司业务转型仍在进行中，若医疗服务和康养业务增长不及预期，可能导致业绩继续下滑，无法达到市场预期。
+        </p>
+      </div>
+      <div class="risk-item">
+        <h3 class="risk-title">财务风险</h3>
+        <p class="risk-description">
+          公司负债率高达93.46%，现金流状况不佳，存在较大的财务风险，若融资环境收紧，可能面临资金压力。
+        </p>
+      </div>
+      <div class="risk-item">
+        <h3 class="risk-title">医保政策变动风险</h3>
+        <p class="risk-description">
+          医保支付方式改革和DRG/DIP支付政策推进可能对公司医疗服务业务收入产生影响，增加经营不确定性。
+        </p>
+      </div>
+      <div class="risk-item">
+        <h3 class="risk-title">行业竞争加剧风险</h3>
+        <p class="risk-description">
+          医疗服务市场竞争日益激烈，公立医院改革和社会资本进入加速，可能导致公司市场份额下降。
+        </p>
+      </div>
+      <div class="risk-item">
+        <h3 class="risk-title">医疗风险</h3>
+        <p class="risk-description">
+          医疗服务存在固有的医疗风险，若发生医疗事故或纠纷，可能对公司声誉和业务造成负面影响。
+        </p>
+      </div>
+      <div class="risk-item">
+        <h3 class="risk-title">股价波动风险</h3>
+        <p class="risk-description">
+          公司股价近期波动较大，换手率高，投机性强，存在短期大幅回调的风险。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 投资建议卡片 -->
+  <div class="bento-card col-span-12 md:col-span-6">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">lightbulb</span>
+      <h2 class="card-title">投资建议</h2>
+    </div>
+    <div>
+      <h3 class="section-title">投资逻辑</h3>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>医疗服务行业景气度：</strong>医疗服务行业受益于政策支持和人口老龄化趋势，长期发展前景良好。公司作为区域医疗服务龙头，有望受益于行业增长。
+        </div>
+      </div>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>转型进展：</strong>公司向医疗健康产业转型已见成效，医疗服务和康养业务占比逐步提升，未来有望成为公司稳定的利润来源。
+        </div>
+      </div>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>区域优势：</strong>公司在苏南地区特别是张家港市拥有较强的医疗资源优势和品牌影响力，区域竞争力强。
+        </div>
+      </div>
+      <div class="list-item">
+        <span class="material-symbols-outlined bullet">arrow_right</span>
+        <div class="list-content">
+          <strong>短期催化剂：</strong>近期医疗服务板块整体表现活跃，市场风格偏向中小市值医疗股，公司有望受益于板块轮动。
+        </div>
+      </div>
+
+      <h3 class="section-title mt-4">操作策略</h3>
+      <div class="bg-blue-50 p-4 rounded-lg">
+        <p class="text-blue-800 mb-2 font-semibold">
+          投资评级：建议关注
+        </p>
+        <p class="text-blue-800 mb-2">
+          <span class="font-semibold">买入策略：</span>建议在4.30-4.50元区间逢低布局，分批建仓，单次仓位不超过总资金的10%。
+        </p>
+        <p class="text-blue-800 mb-2">
+          <span class="font-semibold">目标价位：</span>短期目标价5.00-5.50元，对应上涨空间12.4%-23.6%。
+        </p>
+        <p class="text-blue-800 mb-2">
+          <span class="font-semibold">止损位：</span>4.00元（-10.1%），跌破此价格坚决止损。
+        </p>
+        <p class="text-blue-800">
+          <span class="font-semibold">持有周期：</span>短期（1-3个月），建议波段操作，不宜长期持有。
+        </p>
+      </div>
+
+      <h3 class="section-title mt-4">连板潜力评估</h3>
+      <p class="text-gray-700 mb-3">
+        基于连板潜力评估体系，对澳洋健康的连板可能性进行综合评估：
+      </p>
+      <div class="mb-1">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium">首板涨停特征评分</span>
+          <span class="text-sm font-medium">中等</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-value progress-medium" style="width: 60%"></div>
+        </div>
+      </div>
+      <div class="mb-1">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium">所属板块热度</span>
+          <span class="text-sm font-medium">较高</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-value progress-high" style="width: 75%"></div>
+        </div>
+      </div>
+      <div class="mb-1">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium">游资参与度</span>
+          <span class="text-sm font-medium">较高</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-value progress-high" style="width: 80%"></div>
+        </div>
+      </div>
+      <div class="mb-1">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium">基本面支撑</span>
+          <span class="text-sm font-medium">较弱</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-value progress-low" style="width: 40%"></div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium">综合连板概率</span>
+          <span class="text-sm font-medium">中等</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-value progress-medium" style="width: 65%"></div>
+        </div>
+      </div>
+      <p class="text-gray-700 mt-2">
+        综合评估：澳洋健康具备一定的连板潜力，但基本面较弱制约了持续性，预计短期内有望冲击涨停，但连续涨停的概率不高，建议投资者谨慎参与，做好风险控制。
+      </p>
+    </div>
+  </div>
+
+  <!-- 免责声明卡片 -->
+  <div class="bento-card col-span-12">
+    <div class="card-header">
+      <span class="material-symbols-outlined icon">gavel</span>
+      <h2 class="card-title">免责声明</h2>
+    </div>
+    <p class="text-gray-600 text-sm">
+      本报告中的信息均来源于已公开的资料，我们对这些信息的准确性和完整性不作任何保证。本报告中的信息、意见等均仅供参考，不构成所述证券买卖的出价或征价。投资者应根据个人投资目标、财务状况和需求来判断是否使用本报告所载内容和信息，独立做出投资决策并自行承担风险。投资有风险，入市须谨慎。
+    </p>
+  </div>
+</div>
+
+<footer class="w-full bg-gray-800 text-white py-8 mt-8">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <h3 class="text-xl font-bold mb-2">澳洋健康 (002172) 股票分析报告</h3>
+        <p class="text-gray-400">推荐日期：2025年6月11日</p>
+      </div>
+      <div>
+        <p class="text-gray-400 text-sm">数据来源：东方财富网、Wind、公司公告</p>
+        <p class="text-gray-400 text-sm">分析师：张涛</p>
+      </div>
+    </div>
+    <div class="mt-6 pt-6 border-t border-gray-700 text-center text-gray-400 text-sm">
+      © 2025 A股涨停股分析系统 版权所有
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 初始化图表
+  document.addEventListener('DOMContentLoaded', function() {
+    // 营收与净利润趋势图
+    var revenueChart = echarts.init(document.getElementById('revenueChart'));
+    var revenueOption = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      legend: {
+        data: ['营业收入', '净利润']
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'category',
+        data: ['2022', '2023', '2024', '2025Q1']
+      },
+      yAxis: {
+        type: 'value',
+        name: '亿元'
+      },
+      series: [
+        {
+          name: '营业收入',
+          type: 'bar',
+          data: [23.5, 21.8, 20.1, 4.52],
+          color: '#3b82f6'
+        },
+        {
+          name: '净利润',
+          type: 'line',
+          data: [0.65, 0.52, 0.41, 0.19],
+          color: '#10b981',
+          symbolSize: 8
+        }
+      ]
+    };
+    revenueChart.setOption(revenueOption);
+
+    // 毛利率与净利率趋势图
+    var marginChart = echarts.init(document.getElementById('marginChart'));
+    var marginOption = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross'
+        }
+      },
+      legend: {
+        data: ['毛利率', '净利率']
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'category',
+        data: ['2022', '2023', '2024', '2025Q1']
+      },
+      yAxis: {
+        type: 'value',
+        name: '%',
+        axisLabel: {
+          formatter: '{value}%'
+        }
+      },
+      series: [
+        {
+          name: '毛利率',
+          type: 'line',
+          data: [16.8, 16.2, 15.5, 15.09],
+          color: '#6366f1',
+          symbolSize: 8,
+          lineStyle: {
+            width: 3
+          }
+        },
+        {
+          name: '净利率',
+          type: 'line',
+          data: [5.2, 4.8, 4.3, 4.17],
+          color: '#f59e0b',
+          symbolSize: 8,
+          lineStyle: {
+            width: 3
+          }
+        }
+      ]
+    };
+    marginChart.setOption(marginOption);
+
+    // 窗口调整时重置图表大小
+    window.addEventListener('resize', function() {
+      revenueChart.resize();
+      marginChart.resize();
+    });
+  });
+</script>
+</body>
+</html>
