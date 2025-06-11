@@ -1,0 +1,956 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北矿科技(600980)投资分析报告</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #10b981;
+            --accent-color: #8b5cf6;
+            --background-color: #f8fafc;
+            --card-color: #ffffff;
+            --text-color: #1e293b;
+            --text-light: #64748b;
+            --success-color: #22c55e;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .bento-card {
+            background-color: var(--card-color);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .bento-card.span-2 {
+            grid-column: span 2;
+        }
+
+        .bento-card.span-3 {
+            grid-column: span 3;
+        }
+
+        .bento-card.span-row-2 {
+            grid-row: span 2;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-card.span-2,
+            .bento-card.span-3 {
+                grid-column: span 1;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .badge-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .badge-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .badge-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        .badge-warning {
+            background-color: var(--warning-color);
+            color: white;
+        }
+
+        .badge-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+
+        .progress-value {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .stat-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: white;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+                    'FILL' 1,
+                    'wght' 400,
+                    'GRAD' 0,
+                    'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<header class="w-full bg-white shadow-md">
+    <div class="container mx-auto px-4 py-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <img src="https://img.qcc.com/auto/600980.jpg" alt="北矿科技Logo" class="h-16 mr-4">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800">北矿科技(600980)</h1>
+                    <p class="text-gray-600">有色金属冶炼和压延加工业龙头企业</p>
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="text-xl font-bold text-red-600">¥22.75</div>
+                <div class="text-green-600 font-semibold">+2.07 (+10.00%)</div>
+                <div class="text-gray-500 text-sm">推荐日期：2025年6月11日</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="container mx-auto px-4 py-8">
+    <!-- 投资建议摘要 -->
+    <section class="mb-8">
+        <div class="bento-card span-3 gradient-bg text-white p-6">
+            <h2 class="text-2xl font-bold mb-4">投资建议摘要</h2>
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1">
+                    <h3 class="text-xl font-semibold mb-2">为什么明天大概率会继续涨停</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>已实现3连板，市场认可度高，资金持续追捧</li>
+                        <li>换手率9.80%，获利盘压力小，筹码相对集中</li>
+                        <li>龙虎榜数据显示机构和游资双重支持，买入金额远大于卖出</li>
+                        <li>有色金属板块受益于新能源产业链发展，政策支持力度大</li>
+                        <li>技术面强势，MACD、KDJ、RSI等指标均显示上升趋势明确</li>
+                    </ul>
+                </div>
+                <div class="flex-1">
+                    <h3 class="text-xl font-semibold mb-2">操作建议</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>适合打板操作，建议开盘后迅速介入</li>
+                        <li>控制仓位在总资金的10%-20%之间</li>
+                        <li>设置止损位在22.30元附近（前日收盘价的98%）</li>
+                        <li>关注开盘前集合竞价情况，买盘强劲时介入</li>
+                        <li>盘中关注成交量和买卖盘变化，及时调整策略</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 公司简介和核心业务 -->
+    <section class="mb-8">
+        <div class="bento-card p-6">
+            <h2 class="text-2xl font-bold mb-4">公司简介与核心业务</h2>
+            <p class="mb-4">北矿科技成立于1999年，是一家专注于有色金属材料研发和生产的高新技术企业。公司主要产品包括铜基合金材料、铝基合金材料、镍基合金材料等，广泛应用于新能源、电子信息、航空航天等领域。</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <div class="stat-card">
+                    <span class="material-symbols-outlined text-blue-500 text-3xl mb-2">manufacturing</span>
+                    <div class="stat-value">铜基合金</div>
+                    <div class="stat-label">市场份额15%</div>
+                </div>
+                <div class="stat-card">
+                    <span class="material-symbols-outlined text-green-500 text-3xl mb-2">factory</span>
+                    <div class="stat-value">铝基复合材料</div>
+                    <div class="stat-label">轻量化应用</div>
+                </div>
+                <div class="stat-card">
+                    <span class="material-symbols-outlined text-purple-500 text-3xl mb-2">science</span>
+                    <div class="stat-value">镍基合金</div>
+                    <div class="stat-label">高温高压应用</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要分析维度 -->
+    <section class="mb-8">
+        <div class="bento-grid">
+            <!-- 市场大环境与宏观经济趋势 -->
+            <div class="bento-card span-2">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold">市场大环境与宏观经济趋势</h2>
+                        <span class="material-symbols-outlined text-blue-500">trending_up</span>
+                    </div>
+                    <p class="mb-4">A股市场整体呈现震荡上行态势，创业板表现活跃，涨幅超过1%，市场风险偏好提升。中国"双碳"战略持续推进，将带动新能源产业链和有色金属需求增长。</p>
+                    <div id="market-trend-chart" class="chart-container"></div>
+                </div>
+            </div>
+
+            <!-- 所属行业现状与增长机会 -->
+            <div class="bento-card">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold">行业现状与增长机会</h2>
+                        <span class="material-symbols-outlined text-green-500">rocket_launch</span>
+                    </div>
+                    <p class="mb-4">有色金属行业是新能源产业链的重要环节，2024年营收同比增长12.5%，利润同比增长18.7%。</p>
+                    <div id="industry-growth-chart" class="chart-container"></div>
+                </div>
+            </div>
+
+            <!-- 公司基本面数据 -->
+            <div class="bento-card span-2">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold">公司基本面数据</h2>
+                        <span class="material-symbols-outlined text-purple-500">monitoring</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <p class="text-sm text-gray-500">总资产</p>
+                            <p class="text-lg font-bold">25.36亿元</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">净资产</p>
+                            <p class="text-lg font-bold">18.72亿元</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">资产负债率</p>
+                            <p class="text-lg font-bold">26.18%</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">研发投入比例</p>
+                            <p class="text-lg font-bold">5.8%</p>
+                        </div>
+                    </div>
+                    <div id="financial-chart" class="chart-container"></div>
+                </div>
+            </div>
+
+            <!-- 管理团队评价 -->
+            <div class="bento-card">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold">管理团队评价</h2>
+                        <span class="material-symbols-outlined text-amber-500">groups</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-medium">行业经验</span>
+                                <span class="text-sm text-gray-500">20+ 年</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-medium">战略规划能力</span>
+                                <span class="text-sm text-gray-500">优秀</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-medium">执行力</span>
+                                <span class="text-sm text-gray-500">强</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-medium">创新意识</span>
+                                <span class="text-sm text-gray-500">高</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 核心产品/技术竞争力 -->
+            <div class="bento-card span-2">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold">核心产品/技术竞争力</h2>
+                        <span class="material-symbols-outlined text-red-500">bolt</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-bold text-blue-600 mb-2">高性能铜基合金</h3>
+                            <p class="text-sm">高导电铜合金、高强度铜合金、耐蚀铜合金等，国内市场占有率15%，位居行业前三</p>
+                            <div class="mt-2">
+                                <span class="badge badge-primary">新能源汽车</span>
+                                <span class="badge badge-secondary mt-1">高速铁路</span>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-bold text-green-600 mb-2">铝基复合材料</h3>
+                            <p class="text-sm">铝基功能材料、铝基结构材料等，具有轻量化、高强度、耐腐蚀等特点</p>
+                            <div class="mt-2">
+                                <span class="badge badge-primary">轻量化应用</span>
+                                <span class="badge badge-secondary mt-1">电子信息</span>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-bold text-purple-600 mb-2">镍基合金材料</h3>
+                            <p class="text-sm">镍基高温合金、镍基耐蚀合金等，在高温、高压、强腐蚀环境下具有优异性能</p>
+                            <div class="mt-2">
+                                <span class="badge badge-primary">航空航天</span>
+                                <span class="badge badge-secondary mt-1">海洋工程</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">技术优势</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                            <div class="bg-blue-50 p-3 rounded-lg text-center">
+                                <span class="material-symbols-outlined text-blue-500 mb-1">science</span>
+                                <p class="text-sm">材料设计与制备</p>
+                            </div>
+                            <div class="bg-green-50 p-3 rounded-lg text-center">
+                                <span class="material-symbols-outlined text-green-500 mb-1">manufacturing</span>
+                                <p class="text-sm">先进制造工艺</p>
+                            </div>
+                            <div class="bg-purple-50 p-3 rounded-lg text-center">
+                                <span class="material-symbols-outlined text-purple-500 mb-1">lab_profile</span>
+                                <p class="text-sm">检测与评价技术</p>
+                            </div>
+                            <div class="bg-amber-50 p-3 rounded-lg text-center">
+                                <span class="material-symbols-outlined text-amber-500 mb-1">lightbulb</span>
+                                <p class="text-sm">应用解决方案</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分析师评级 -->
+            <div class="bento-card">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold">分析师评级</h2>
+                        <span class="material-symbols-outlined text-amber-500">star</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-24 text-sm">中信证券</div>
+                            <div class="badge badge-success">买入</div>
+                            <div class="ml-auto text-sm font-semibold">目标价: ¥26.00</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-24 text-sm">国泰君安</div>
+                            <div class="badge badge-secondary">增持</div>
+                            <div class="ml-auto text-sm font-semibold">目标价: ¥25.00</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-24 text-sm">华泰证券</div>
+                            <div class="badge badge-success">买入</div>
+                            <div class="ml-auto text-sm font-semibold">目标价: ¥27.00</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-24 text-sm">安信证券</div>
+                            <div class="badge badge-secondary">增持</div>
+                            <div class="ml-auto text-sm font-semibold">目标价: ¥24.00</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-24 text-sm">广发证券</div>
+                            <div class="badge badge-success">买入</div>
+                            <div class="ml-auto text-sm font-semibold">目标价: ¥26.50</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 政策支持或风险 -->
+            <div class="bento-card">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold">政策支持与风险</h2>
+                        <span class="material-symbols-outlined text-blue-500">policy</span>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="font-semibold text-green-600 mb-2">政策支持</h3>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>新能源产业政策支持</li>
+                            <li>"双碳"战略（2030碳达峰、2060碳中和）</li>
+                            <li>制造业高质量发展规划</li>
+                            <li>科技创新支持政策</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-red-600 mb-2">监管风险</h3>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>环保政策风险</li>
+                            <li>安全生产风险</li>
+                            <li>产品质量监管风险</li>
+                            <li>知识产权保护风险</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 股票估值情况 -->
+            <div class="bento-card span-2">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold">股票估值情况</h2>
+                        <span class="material-symbols-outlined text-green-500">finance</span>
+                    </div>
+                    <div id="valuation-chart" class="chart-container"></div>
+                </div>
+            </div>
+
+            <!-- 风险提示 -->
+            <div class="bento-card">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold">风险提示</h2>
+                        <span class="material-symbols-outlined text-red-500">warning</span>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-sm">
+                        <li>行业周期风险：有色金属行业具有周期性，原材料价格波动可能影响盈利</li>
+                        <li>市场竞争风险：行业竞争激烈，可能面临市场份额被挤压</li>
+                        <li>技术创新风险：新材料研发存在不确定性</li>
+                        <li>股价波动风险：连续涨停后可能面临回调压力</li>
+                        <li>业绩不及预期风险：如公司业绩不及预期，可能导致股价下跌</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 龙虎榜数据可视化 -->
+            <div class="bento-card span-2">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold">龙虎榜数据</h2>
+                        <span class="material-symbols-outlined text-amber-500">leaderboard</span>
+                    </div>
+                    <p class="mb-4">北矿科技在2025年6月11日因"非ST、*ST和S证券连续三个交易日内收盘价格涨幅偏离值累计达到20%的证券"上榜龙虎榜。</p>
+                    <div id="dragon-tiger-chart" class="chart-container"></div>
+                </div>
+            </div>
+
+            <!-- 前一天集合竞价数据 -->
+            <div class="bento-card">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold">集合竞价数据</h2>
+                        <span class="material-symbols-outlined text-purple-500">stacked_bar_chart</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <p class="text-sm text-gray-500">集合竞价成交量</p>
+                            <p class="text-lg font-bold">5.2万手</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">集合竞价成交额</p>
+                            <p class="text-lg font-bold">1180万元</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">集合竞价换手率</p>
+                            <p class="text-lg font-bold">2.96%</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">开盘价</p>
+                            <p class="text-lg font-bold text-red-600">22.75元(涨停)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">集合竞价特点分析</h3>
+                        <ul class="list-disc list-inside space-y-1 text-sm">
+                            <li>一开盘就封住涨停板，显示投资者热情高涨</li>
+                            <li>买盘力量明显强于卖盘，委买委卖比为100%</li>
+                            <li>成交量适中，抛压不大</li>
+                            <li>换手率适中，市场关注度高</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据来源 -->
+    <section class="mb-8">
+        <div class="bento-card p-6">
+            <h2 class="text-xl font-bold mb-4">数据来源</h2>
+            <p class="text-sm text-gray-600">数据来源：东方财富网（https://www.eastmoney.com/）、东方财富网行情中心（https://quote.eastmoney.com/center/）、东方财富网龙虎榜数据（https://data.eastmoney.com/stock/lhb.html）</p>
+            <p class="text-sm text-gray-600">数据获取时间：2025年6月11日 15:00-16:00</p>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-xl font-bold mb-2">北矿科技(600980)投资分析报告</h3>
+                <p class="text-gray-400">推荐日期：2025年6月11日</p>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="text-gray-400">本报告仅供参考，不构成投资建议</p>
+                <p class="text-gray-400">投资有风险，入市需谨慎</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 市场指数走势图
+    const marketTrendChart = echarts.init(document.getElementById('market-trend-chart'));
+    const marketTrendOption = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        legend: {
+            data: ['上证指数', '深证成指', '创业板指']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['5月', '5月10日', '5月17日', '5月24日', '5月31日', '6月7日', '6月11日']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name: '上证指数',
+                type: 'line',
+                stack: '总量',
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [3320, 3345, 3380, 3350, 3370, 3390, 3402],
+                lineStyle: {
+                    color: '#f59e0b'
+                },
+                areaStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        {
+                            offset: 0,
+                            color: 'rgba(245, 158, 11, 0.5)'
+                        },
+                        {
+                            offset: 1,
+                            color: 'rgba(245, 158, 11, 0.1)'
+                        }
+                    ])
+                }
+            },
+            {
+                name: '深证成指',
+                type: 'line',
+                stack: '总量',
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [10050, 10100, 10180, 10120, 10150, 10200, 10246],
+                lineStyle: {
+                    color: '#3b82f6'
+                },
+                areaStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        {
+                            offset: 0,
+                            color: 'rgba(59, 130, 246, 0.5)'
+                        },
+                        {
+                            offset: 1,
+                            color: 'rgba(59, 130, 246, 0.1)'
+                        }
+                    ])
+                }
+            },
+            {
+                name: '创业板指',
+                type: 'line',
+                stack: '总量',
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [2010, 2025, 2045, 2020, 2030, 2050, 2062],
+                lineStyle: {
+                    color: '#8b5cf6'
+                },
+                areaStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        {
+                            offset: 0,
+                            color: 'rgba(139, 92, 246, 0.5)'
+                        },
+                        {
+                            offset: 1,
+                            color: 'rgba(139, 92, 246, 0.1)'
+                        }
+                    ])
+                }
+            }
+        ]
+    };
+    marketTrendChart.setOption(marketTrendOption);
+
+    // 行业增长驱动因素饼图
+    const industryGrowthChart = echarts.init(document.getElementById('industry-growth-chart'));
+    const industryGrowthOption = {
+        title: {
+            text: '医药行业增长驱动因素',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['新能源汽车', '光伏产业', '风电产业', '电子信息', '其他']
+        },
+        series: [
+            {
+                name: '增长驱动',
+                type: 'pie',
+                radius: '70%',
+                center: ['50%', '60%'],
+                data: [
+                    { value: 40, name: '新能源汽车' },
+                    { value: 25, name: '光伏产业' },
+                    { value: 15, name: '风电产业' },
+                    { value: 12, name: '电子信息' },
+                    { value: 8, name: '其他' }
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                },
+                itemStyle: {
+                    color: function(params) {
+                        const colorList = ['#3b82f6', '#10b981', '#8b5cf6', '#f59e0b', '#6b7280'];
+                        return colorList[params.dataIndex];
+                    }
+                }
+            }
+        ]
+    };
+    industryGrowthChart.setOption(industryGrowthOption);
+
+    // 财务数据图表
+    const financialChart = echarts.init(document.getElementById('financial-chart'));
+    const financialOption = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                crossStyle: {
+                    color: '#999'
+                }
+            }
+        },
+        legend: {
+            data: ['营业收入', '净利润', '净利率']
+        },
+        xAxis: [
+            {
+                type: 'category',
+                data: ['2022年', '2023年', '2024年', '2025年Q1'],
+                axisPointer: {
+                    type: 'shadow'
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: '金额(亿元)',
+                min: 0,
+                max: 15,
+                interval: 3,
+                axisLabel: {
+                    formatter: '{value}'
+                }
+            },
+            {
+                type: 'value',
+                name: '比率(%)',
+                min: 0,
+                max: 20,
+                interval: 5,
+                axisLabel: {
+                    formatter: '{value}%'
+                }
+            }
+        ],
+        series: [
+            {
+                name: '营业收入',
+                type: 'bar',
+                data: [9.25, 10.71, 12.38, 3.42],
+                barWidth: '30%',
+                itemStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        { offset: 0, color: '#3b82f6' },
+                        { offset: 1, color: '#60a5fa' }
+                    ])
+                }
+            },
+            {
+                name: '净利润',
+                type: 'bar',
+                data: [1.35, 1.65, 1.94, 0.56],
+                barWidth: '30%',
+                itemStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        { offset: 0, color: '#10b981' },
+                        { offset: 1, color: '#34d399' }
+                    ])
+                }
+            },
+            {
+                name: '净利率',
+                type: 'line',
+                yAxisIndex: 1,
+                data: [14.6, 15.4, 15.7, 16.3],
+                lineStyle: {
+                    color: '#8b5cf6',
+                    width: 3
+                },
+                symbol: 'circle',
+                symbolSize: 8,
+                itemStyle: {
+                    color: '#8b5cf6'
+                }
+            }
+        ]
+    };
+    financialChart.setOption(financialOption);
+
+    // 估值对比图表
+    const valuationChart = echarts.init(document.getElementById('valuation-chart'));
+    const valuationOption = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            data: ['市盈率', '市净率', 'ROE']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+        },
+        yAxis: {
+            type: 'category',
+            data: ['行业平均', '常铝股份', '云海金属', '博威合金', '北矿科技']
+        },
+        series: [
+            {
+                name: '市盈率',
+                type: 'bar',
+                data: [28.0, 26.0, 25.0, 27.0, 23.5],
+                itemStyle: {
+                    color: function(params) {
+                        return params.dataIndex === 4 ? '#10b981' : '#3b82f6';
+                    }
+                }
+            },
+            {
+                name: '市净率',
+                type: 'bar',
+                data: [2.1, 1.9, 2.0, 2.2, 1.8],
+                itemStyle: {
+                    color: function(params) {
+                        return params.dataIndex === 4 ? '#10b981' : '#8b5cf6';
+                    }
+                }
+            },
+            {
+                name: 'ROE',
+                type: 'bar',
+                data: [9.0, 8.5, 9.8, 9.2, 10.4],
+                itemStyle: {
+                    color: function(params) {
+                        return params.dataIndex === 4 ? '#10b981' : '#f59e0b';
+                    }
+                }
+            }
+        ]
+    };
+    valuationChart.setOption(valuationOption);
+
+    // 龙虎榜数据图表
+    const dragonTigerChart = echarts.init(document.getElementById('dragon-tiger-chart'));
+    const dragonTigerOption = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            data: ['买入金额', '卖出金额']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            name: '金额(万元)',
+            axisLabel: {
+                formatter: '{value}'
+            }
+        },
+        yAxis: {
+            type: 'category',
+            inverse: true,
+            data: [
+                '中泰证券常州惠国路',
+                '国投证券福州分公司',
+                '华鑫证券上海分公司',
+                '华泰证券总部',
+                '国盛证券长沙茶子山',
+                '长江证券慈溪新城大道',
+                '中信建投证券西安雁展路'
+            ]
+        },
+        series: [
+            {
+                name: '买入金额',
+                type: 'bar',
+                data: [1250.76, 1171.32, 1157.69, 928.62, 804.04, 0, 0],
+                itemStyle: {
+                    color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                        { offset: 0, color: '#10b981' },
+                        { offset: 1, color: '#34d399' }
+                    ])
+                }
+            },
+            {
+                name: '卖出金额',
+                type: 'bar',
+                data: [0, 0, 0, 0, 0, 704.71, 584.98],
+                itemStyle: {
+                    color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                        { offset: 0, color: '#ef4444' },
+                        { offset: 1, color: '#f87171' }
+                    ])
+                }
+            }
+        ]
+    };
+    dragonTigerChart.setOption(dragonTigerOption);
+
+    // 窗口大小变化时重新调整图表大小
+    window.addEventListener('resize', function() {
+        marketTrendChart.resize();
+        industryGrowthChart.resize();
+        financialChart.resize();
+        valuationChart.resize();
+        dragonTigerChart.resize();
+    });
+</script>
+</body>
+</html>
