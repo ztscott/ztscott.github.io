@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ecd3742-5d33-4eb1-9532-9cefe5009239" name="Default Changelist" comment="路径">
-      <change afterPath="$PROJECT_DIR$/.idea/univers_workspace_state.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2020/05/26/bettercap的使用/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/2020/05/26/北矿科技(600980)/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2025/06/11/limt-up_stock_analysis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/2025/06/11/澳洋健康 (002172)/index.html" afterDir="false" />
+    <list default="true" id="5ecd3742-5d33-4eb1-9532-9cefe5009239" name="Default Changelist" comment="date">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +98,9 @@
     <MESSAGE value="最新A股涨停股每日投资分析报告" />
     <MESSAGE value="标签" />
     <MESSAGE value="路径" />
-    <option name="LAST_COMMIT_MESSAGE" value="路径" />
+    <MESSAGE value="北矿科技(600980)" />
+    <MESSAGE value="date" />
+    <option name="LAST_COMMIT_MESSAGE" value="date" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
