@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ecd3742-5d33-4eb1-9532-9cefe5009239" name="Default Changelist" comment="&lt;h1&gt;添加" />
+    <list default="true" id="5ecd3742-5d33-4eb1-9532-9cefe5009239" name="Default Changelist" comment="投资报告" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +16,9 @@
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="true" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1reX7TC0unO1gJf00J9tCuiasx2" />
   <component name="ProjectViewState">
@@ -37,6 +40,14 @@
     "last_opened_file_path": "/Users/bytedance/go/src/code.byted.org/own_project/ztscott.github.io/2025/06/10/远洋健康投资分析报告"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/2025/06/10/远洋健康投资分析报告" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/archives" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -76,24 +87,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&lt;h1&gt;添加" />
-    <option name="LAST_COMMIT_MESSAGE" value="&lt;h1&gt;添加" />
+    <MESSAGE value="投资报告" />
+    <option name="LAST_COMMIT_MESSAGE" value="投资报告" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
     <settings-migrated>true</settings-migrated>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2184" y="1" width="804" height="859" key="CommitChangelistDialog2" timestamp="1619337929636">
-      <screen x="1920" y="0" width="1440" height="860" />
-    </state>
-    <state x="2184" y="1" width="804" height="859" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1619337929636" />
-    <state x="2113" y="234" key="git4idea.merge.GitPullDialog" timestamp="1619341139131">
-      <screen x="1920" y="0" width="1440" height="860" />
-    </state>
-    <state x="2113" y="234" key="git4idea.merge.GitPullDialog/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1619341139131" />
-    <state x="2545" y="302" key="git4idea.rebase.GitRebaseDialog" timestamp="1619337652911">
-      <screen x="1920" y="0" width="1440" height="860" />
-    </state>
-    <state x="2545" y="302" key="git4idea.rebase.GitRebaseDialog/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1619337652911" />
   </component>
 </project>
