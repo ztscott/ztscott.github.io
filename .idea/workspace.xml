@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ecd3742-5d33-4eb1-9532-9cefe5009239" name="Default Changelist" comment="about me">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2025/06/11/北矿科技(600980)/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/2025/06/11/北矿科技(600980)/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="5ecd3742-5d33-4eb1-9532-9cefe5009239" name="Default Changelist" comment="打赏" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +108,8 @@
     <MESSAGE value="标签" />
     <MESSAGE value="字体大小h5" />
     <MESSAGE value="about me" />
-    <option name="LAST_COMMIT_MESSAGE" value="about me" />
+    <MESSAGE value="打赏" />
+    <option name="LAST_COMMIT_MESSAGE" value="打赏" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
