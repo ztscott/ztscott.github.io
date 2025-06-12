@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ecd3742-5d33-4eb1-9532-9cefe5009239" name="Default Changelist" comment="标签">
-      <change beforePath="$PROJECT_DIR$/archives/2020/05/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/archives/2020/05/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archives/2020/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/archives/2020/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/archives/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/categories/股票/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/categories/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/数据库/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/数据结构/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/系统/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/软件/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags/hexo/index.html" afterDir="false" />
+    <list default="true" id="5ecd3742-5d33-4eb1-9532-9cefe5009239" name="Default Changelist" comment="字体大小h5">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +108,8 @@
     <MESSAGE value="javascript:void(0)" />
     <MESSAGE value="3.png" />
     <MESSAGE value="标签" />
-    <option name="LAST_COMMIT_MESSAGE" value="标签" />
+    <MESSAGE value="字体大小h5" />
+    <option name="LAST_COMMIT_MESSAGE" value="字体大小h5" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
