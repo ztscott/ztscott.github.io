@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ecd3742-5d33-4eb1-9532-9cefe5009239" name="Default Changelist" comment="图标链接" />
+    <list default="true" id="5ecd3742-5d33-4eb1-9532-9cefe5009239" name="Default Changelist" comment="文案" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +46,7 @@
       <recent name="$PROJECT_DIR$/2025/06/10/远洋健康投资分析报告" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/2025/06/11" />
       <recent name="$PROJECT_DIR$/archives/2025/06" />
       <recent name="$PROJECT_DIR$/archives" />
     </key>
@@ -100,7 +101,8 @@
     <MESSAGE value="更名" />
     <MESSAGE value="路径" />
     <MESSAGE value="图标链接" />
-    <option name="LAST_COMMIT_MESSAGE" value="图标链接" />
+    <MESSAGE value="文案" />
+    <option name="LAST_COMMIT_MESSAGE" value="文案" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
