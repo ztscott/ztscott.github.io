@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ecd3742-5d33-4eb1-9532-9cefe5009239" name="Default Changelist" comment="文案" />
+    <list default="true" id="5ecd3742-5d33-4eb1-9532-9cefe5009239" name="Default Changelist" comment="javascript:void(0)">
+      <change beforePath="$PROJECT_DIR$/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/categories/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +105,8 @@
     <MESSAGE value="路径" />
     <MESSAGE value="图标链接" />
     <MESSAGE value="文案" />
-    <option name="LAST_COMMIT_MESSAGE" value="文案" />
+    <MESSAGE value="javascript:void(0)" />
+    <option name="LAST_COMMIT_MESSAGE" value="javascript:void(0)" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
